@@ -37,8 +37,14 @@ class InfosController < ApplicationController
     gon.infos = @infos
     gon.date = @infos.pluck(:created_at)
     @location = Location.new
-    unless @user.location.blank?
-      gon.region = @user.location.region
+    unless @user.blank?
+      unless @user.location.blank?
+        gon.region = @user.location.region
+      end
+    end
+    respond_to do |format|
+        format.html
+        format.json
     end
   end
 
