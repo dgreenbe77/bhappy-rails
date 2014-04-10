@@ -1,0 +1,53 @@
+<%= form_for(@info) do |f| %>
+
+  <% if @info.errors.any? %>
+
+    <div id="error_explanation">
+      <h3><%= pluralize(@info.errors.count, "error") %> Invalid Post:</h3>
+      <ul>
+      <% @info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    
+  <% end %>
+
+  <script>
+    function helloWorld(event){
+      debugger;
+      var url = null;
+      var file = event.fpfiles;
+      url = file.forEach(function (array) { url = array['url']} )
+    }
+  </script>
+
+  <div>
+    <%= f.label :image, "Take or Upload Your Image for Facial Analysis:" %>
+    <%= f.filepicker_field :image, class: "filepicker", value: "Add Image", onchange: 'helloWorld(event)', button_text: 'Add Image', dragdrop: true, drag_class: "dragdrop", services: "COMPUTER, WEBCAM, FACEBOOK, INSTAGRAM, FLICKR, URL, IMAGE_SEARCH, DROPBOX, GMAIL, GOOGLE_DRIVE, BOX, SKYDRIVE, PICASA, GITHUB, EVERNOTE, ALFRESCO, FTP, WEBDAV" %>
+  </div>
+
+  <br>
+
+  <% offset = rand(Question.count) %>
+
+  <div>
+    <%= f.label "Post Title" %>
+    <%= f.text_area :title %> 
+  </div>
+
+  <div>
+    <%= f.label "#{Question.first(offset: offset).main_postq}" %>
+    <%= f.text_area :main_post, rows: 20 %>
+  </div>
+  
+  <div>
+    <%= f.label "Enter Location / Address: " %>
+    <%= f.text_area :address %>
+  </div>
+
+  <div>
+    <%= f.submit :"Find Happiness"%>
+  </div>
+
+<% end %>

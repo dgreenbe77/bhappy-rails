@@ -1,0 +1,79 @@
+<div class="background">
+  <img src="/images/sky.png" class="bg">
+  <img src="/images/happy_foreground.png" class="fg"> 
+</div>
+
+<div class="media">
+  <span class="twitter">
+    <a href="https://twitter.com/dgreenbe77" class="twitter-follow-button" data-show-count="true">Follow @dgreenbe77</a>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://bhappy.herokuapp.com" data-text="Bhappy">Tweet</a>
+  </span>
+  <div class="fb-like" data-href="http://bhappy.herokuapp.com" data-send="false" data-layout="button_count" data-show-faces="false"></div>
+</div>
+
+<div class="logo_cloud">
+  <img src="/images/cloud1.png">
+  <h1 class="whole_logo"><a href="/"><img src="/images/smiley.png" class="logo">BHappy</a></h1>
+</div>
+
+<div class="birds" id="smileybirds">
+  <img src="/images/smileybird.png" class="bird1">
+  <img src="/images/smileybird1.png" class="bird2">
+  <img src="/images/smileybird2.png" class="bird3">
+</div>
+
+<div class="large-4 medium-4 columns" id="smiley">
+  <h1 class="eye1">.</h1>
+  <h1 class="eye2">.</h1>
+  <h1 class="mouth">)</h1>
+  <div class="circle"></div>
+</div>
+
+<div class="large-3 medium-3 columns">
+  <img src="/images/cloud1.png" class="cloud1">
+  <img src="/images/cloud2.png" class="cloud2">
+  <img src="/images/cloud1.png" class="cloud3">
+  <img src="/images/cloud2.png" class="cloud4">
+  <img src="/images/cloud2.png" class="cloud5">
+  <img src="/images/cloud_cluster1.png" class="cloud_cluster1">
+  <img src="/images/cloud_cluster2.png" class="cloud_cluster2">
+</div>
+
+<div class = "large-12 medium-12 columns">
+  <%= link_to "Find Happiness", new_info_path, class: " large round button happy"%>
+</div>
+
+<%= javascript_include_tag "social_media" %>
+
+<script>
+  var currentPos = 0;
+  var birds = document.getElementById("smileybirds");
+  var bodWidth = screen.availWidth;
+  var birdPos = -215;
+
+  function move() {
+    if (currentPos < (bodWidth + 500)) {
+
+      currentPos = parseInt(birds.style.right ?
+        birds.style.right : birdPos) + 5;
+
+      birds.style.right = currentPos + "px";
+
+      setTimeout("move()", 20);
+    }
+  }
+  
+  move();
+</script>
+
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220656758000337";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>

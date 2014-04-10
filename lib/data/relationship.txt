@@ -1,0 +1,955 @@
+associate
+comrade
+intimate
+ally
+lover
+acquaintance
+companion
+confederate
+quaker
+colleague
+friending
+friendship
+friends
+admirer
+booster
+champion
+fellow
+friendless
+friendlessness
+protagonist
+sibling
+supporter
+chum
+brother
+buddy
+pal
+crony
+familiar
+alter ego
+amigo
+damon and pythias
+befriend
+girlfriend
+mate
+sidekick
+endorser
+francophil
+francophile
+ratifier
+subscriber
+achates
+ami
+amicicide
+anglophil
+anglophile
+boyfriend
+classmate
+confidant
+free trader
+gossip
+mentor
+patroclus
+pickup
+sympathizer
+well-wisher
+amie
+best friend
+class fellow
+cobber
+connection
+damon
+end man
+girl
+inward
+messmate
+paranymph
+partisan
+philemon
+philhellene
+pillar
+playmate
+schoolfellow
+schoolfriend
+schoolmate
+whig
+aider
+amica
+amicus curiae
+amiga
+amy
+anais
+belamy
+believer
+blood brother
+bully
+bunkmate
+campmate
+cater-cousin
+cavalier
+chico
+cock
+cohort
+compadre
+compeer
+convert
+cronyism
+demophil
+elwood
+enkidu
+enthusiast
+erinna
+eros
+fasta
+fidus achates
+flatmate
+friended
+functionalist
+gangster's moll
+graecophile
+gremial
+gun moll
+herod agrippa i
+homeboy
+informal
+jacobite
+judas
+light
+loyalist
+lum
+mainstay
+matey
+moll
+mucker
+musketeer
+netop
+paisano
+palette
+pardner
+partizan
+philhellinist
+proculeius
+put
+quakeress
+roomie
+roommate
+roundhead
+salanio
+sawyer
+seconder
+shavian
+sister
+snake in the grass
+snowwhite
+sonya
+stalwart
+thine
+tillicum
+toi
+truehearted
+unfriend
+unfriended
+ventidius
+wack
+friendly
+bosom
+valuable
+alienate
+bereave
+betray
+break
+characteristic
+date
+desert
+deserter
+dream
+encounter
+fair-weather
+fall
+false
+firm
+jonathan
+love
+loyal
+mourner
+one-upmanship
+philogynist
+rat
+see
+sincere
+southey
+stop
+touch
+true
+valued
+abandon
+accident
+accommodate
+acknowledge
+acquaint
+adopt
+after
+alcuin
+all
+along
+alterego
+alvin
+ami de cour
+amicable
+amity
+apostate
+apply
+apprehensive
+aramis
+argue
+ask
+athos
+attach
+attachment
+attendant
+aunt
+back
+backstabbing
+bereaved
+bert
+blue
+bridesmaid
+bridesman
+butty
+casey jones
+cato
+chance
+cherished
+colonizationist
+come
+comment
+common
+compare
+concerned
+confidante
+confidence
+copesmate
+cosimo de medici
+cosimo the elder
+counterterm
+curiously enough
+dedication
+demophil(e)
+departed
+desertion
+dishonestly
+dissuade
+dog
+doubleplay
+drone
+drop
+dubitable
+dump
+elegiac
+elmo
+eme
+escort
+essay
+ethel
+eusebian
+faithful
+fast
+favored
+fealty
+federalist
+fido
+form letter
+fran
+gallant
+generous
+good
+goodman
+greeting card
+hal
+hollow
+infliction
+influence
+inscribe
+insincerity
+interpolation
+invitation
+irma
+jealously
+john luther jones
+jones
+jovially
+kate
+lamented
+lancelot
+legolas
+lifelong
+lift
+line
+look
+make
+marching orders
+mary
+mediate
+mellow
+messala
+mirror
+moe
+motoring
+mourning
+my
+myriologue
+near
+nudge
+odie
+ohara
+old
+ollie
+order
+patootie
+pax
+perfidious
+philhellenist
+phintias
+pirithous
+place
+play
+plumber's helper
+pretended
+privado
+privily
+proprietary
+ptolemy i
+pythias
+rather
+ratter
+reason
+recognize
+recreant
+regard
+rei
+rejoice
+renegade
+resoundingly
+rhoda
+robert southey
+romeo
+roo
+run
+russell
+sacco
+savior
+scramble
+service
+sharing
+since
+sir lancelot
+special
+spin
+split
+split up
+stab
+stanch
+stay
+strike
+subderivative
+support
+sure
+swear
+sworn
+thee
+this
+toll
+traffic
+tried
+trusted
+turncoat
+twit
+unaccountably
+uncle
+understanding
+used
+valentine
+watchword
+compliment
+determination
+doc
+elk
+ice
+know
+lane
+mia
+nell
+owl
+pet
+stan
+company
+fellowship
+affiliate
+partner
+consort
+jilt
+connection
+kinship
+affair
+mutual
+relation
+association
+ratio
+human relationship
+relationships
+correspondence
+family relationship
+relations
+resemblance
+affinity
+consanguinity
+proportion
+cognation
+filiation
+liaison
+account
+relate
+blood kinship
+interrelate
+partnership
+acquaintance
+blood
+friendship
+kinship by marriage
+parentage
+rapport
+sympathy
+birth
+break
+close
+confidence
+correlation
+descent
+fatherhood
+have
+kindred
+line of descent
+lineage
+love affair
+paternity
+personal relation
+personal relationship
+sisterhood
+symbiosis
+tie
+trust
+acquaintanceship
+alliance
+amour
+anaclisis
+bank account
+bonding
+brotherhood
+business relationship
+companionship
+connect
+equiparent
+fellowship
+gemeinschaft
+intimacy
+once
+phylogenetic relation
+psychophysics
+reconcile
+romance
+sexual relationship
+society
+transitive
+affaire
+affiliation
+analogy
+bed
+blood brotherhood
+causality
+causation
+company
+compaternity
+cousinage
+degree
+dissolution
+finish
+footing
+half-blood
+involvement
+logic
+lover
+marriage
+maternity
+motherhood
+pally
+parasitism
+part
+perspective
+propinquity
+protectorate
+public relations
+sistership
+subjection
+subjugation
+synastry
+tie-up
+adjusted
+adversarial
+agency
+antibiosis
+apo-
+assimilation
+break with
+breakup
+brokerage account
+classification
+coaction
+collegiality
+comfortableness
+comradeship
+congruence
+consequence
+contrariety
+coordinate
+cosinage
+cousinship
+debt coverage ratio
+direct
+direct relationship
+disoperation
+dissymmetry
+distance
+dvandva
+extramarital
+familiarised
+familiarized
+friendly relationship
+full blood
+gain
+gear ratio
+genital
+get on
+give the axe
+give the bounce
+give the gate
+good fellowship
+gossiprede
+gradable
+homage
+hydrology
+illyrian
+immunogenetics
+incident
+inclusion
+infeudation
+inheritance tax
+interpersonal
+invariant
+inverse
+isomerism
+laius
+man
+margin of profit
+marital bed
+marital relationship
+membership
+misplaced modifier
+mumford
+myrmecophilous
+nearly
+neighborhood
+nonequivalence
+parity
+patruity
+platonism
+predation
+progression
+proxysm
+pseudomutuality
+quadrature
+quotiety
+remote
+removedp
+risk-reward ratio
+rub along
+short account
+steprelationship
+structure
+subinfeudation
+suzerainty
+symphilism
+tandem
+theology
+through
+tie-in
+vassalage
+correlate
+join
+mistress
+nigh
+contact
+diagram
+distant
+honeymoon
+intimate
+sever
+adopt
+apposition
+basque
+bearing
+belonging
+between
+case
+conjugal
+dislocate
+gesellschaft
+group
+institution
+near
+overture
+put
+stoichiometry
+symmetry
+take
+term
+to
+alignment
+ally
+analysis
+associate
+attached
+be
+come
+common
+conformity
+conjunction
+correlative
+descend
+dominatrix
+drop
+ergonomics
+fiduciary
+filial
+float
+geopolitics
+graph
+homology
+immediate
+implication
+incest
+insanity
+kin
+liege
+linkage
+new
+orient
+palsy-walsy
+parallelism
+platonic
+privilege
+privity
+rapprochement
+reciprocal
+reciprocity
+relative
+rupture
+scale
+semantics
+separate
+strained
+symbol
+tension
+thermodynamics
+together
+tonality
+totemism
+two-time
+vicinity
+voice
+-age
+-ile
+abduction
+absurd
+accord
+acknowledge
+acknowledgment
+adaptation
+adjust
+adopted
+adulterous
+adverse witness
+agnate
+ainu
+albanian
+align
+amitate
+analyze
+annulment
+anthropology
+approximation
+assign
+associated
+attitude
+avunculate
+balto-slavonic
+biometeorology
+block diagram
+bond
+bracket
+break of day
+break up
+butch
+cadre
+causal
+cepheid variable
+character
+chiasmus
+child
+chummy
+class
+codependency
+cohabit
+cohabitation
+coherence
+colonialism
+combine
+commensalism
+committed
+common-law marriage
+complex
+congenator
+congener
+connubial
+consanguineous
+consociate
+contrastive
+counter word
+couple
+date
+daughter
+dear
+depth perception
+derive
+desertion
+discommunity
+disorient
+displace
+disproportion
+disrelation
+divorce
+domestic partner
+dr phil
+dyad
+ego ideal
+elamite
+electrodynamics
+electromagnetics
+enantiomer
+enate
+entanglement
+equivalent
+eternal triangle
+experiment
+exploded view
+expression
+fancy woman
+fechner
+female bonding
+femme
+fence-mending
+feudatory
+fleming's rules
+flirtation
+focus
+folk etymology
+footsie
+formula
+fraught
+friend
+full
+function word
+genetic
+genitive
+get off
+glove
+go out
+go steady
+golden section
+good
+good will
+goodwill
+gossipry
+grow
+hall
+hit off
+hittite
+hook-up
+hostile witness
+hypallage
+hyperbolic function
+important
+inamorata
+inamorato
+independent variable
+indeterminably
+insecure
+instrument
+intransitive
+invalidation
+inverse relationship
+inversion
+isto
+japanese
+japhetic
+jig
+juncture
+kept woman
+kiss of death
+korean
+lasting
+late
+law
+legal document
+legal instrument
+link
+liquidity ratios
+loan correspondent
+love
+magnetochemistry
+male bonding
+marguerite radclyffe hall
+market saturation
+matey
+meet
+memento
+mend
+mingle
+mycorrhiza
+nationality
+nepotism
+nodding acquaintance
+number theory
+objective genitive
+official document
+officialize
+operating ratio
+order-call ratio
+palimony
+parallel
+parse
+pas de deux
+peripherally
+positive
+preposition
+presence
+pricing policies
+pride
+productivity
+proud
+proust
+psychoacoustics
+psychology
+psychosexual
+public law
+public relations person
+q factor
+quasi contract
+radclyffe hall
+ratios
+realign
+reciprocal pronoun
+reconciliation
+recusation
+regression
+relatedness
+removed
+resonance
+root
+see
+seigniory
+sentimental value
+sequence
+sexual
+shoe
+sigeh
+significant
+significant other
+slavery
+social science
+son
+son-in-law
+spiritual
+spiritual incest
+spousal equivalent
+spouse equivalent
+step-
+storm
+sumerian
+superego
+symbiont
+symbiotic
+sympathetic
+take back
+terms
+texture
+thermoelectric
+thermoelectricity
+thermomagnetic
+tight
+totem
+triangular
+trophobiosis
+two-timer
+two-way
+type
+unattached
+uncle
+uncommitted
+uncovenanted
+unmoral
+unwarrantably
+vassal
+whole
+working capital
+wright
+break even analysis
+chemism
+contextual definition
+parabola
+partner
+retrogression
+similar
+homosexual
+berth
+port
+head
+politics
+intrigue
+international
+marine
+secretary
+situation
+steward
+aboard
+board
+club
+guild
+anchor
+dock
+ground
+bottom
+careen
+commission
+freighter
+galley
+keel
+log
+navigation
+pilot
+sail
+shipping
+shipwreck
+ton
+tonnage
+wreck
+yawl

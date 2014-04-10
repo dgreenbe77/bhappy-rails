@@ -1,0 +1,152 @@
+<p id="notice"><%= notice %></p>
+
+<h2> Post Data: </h2>
+<h5>  Add Posts to See More Accurate Data </h5>
+
+<div id='chart_div' style='width: 1200px; height: 640px;'></div>
+
+<br><br>
+
+<div id="map_div" style="width: 900px; height: 900;"></div>
+
+<br><br>
+
+<%= simple_form_for(@location) do |r| %>
+  <%= r.select(:region, IsoCountryCodes.for_select) %>
+  <%= r.submit "Change Region" %>
+<% end %>
+
+<%= simple_form_for(@location) do |r| %>
+  <%= r.hidden_field :region, value: "world" %>
+  <%= r.submit "See World" %>
+<% end %>
+
+<div id="donutchart" style="width: 1300px; height: 500px;"></div>
+
+<% unless @info.image == "Add Image" || @info.image.blank? %>
+  <%= filepicker_image_tag @info.image, w: 400, h: 400, fit: 'clip', class: 'center' %>
+  <%= filepicker_save_button "Save", @info.image, "image/jpg" %>
+<% end %>
+
+<p>
+  <strong>Main Post:</strong>
+  <%= @info.main_post %>
+</p>
+
+<% unless @response.nil? %>
+  <h1><%= @response.body["face"] %></h1>
+<% end %>
+
+<p>
+  <strong>Infos:</strong>
+  <%= @infos.map(&:serializable_hash)%>
+</p>
+
+<p>
+  <strong>Happy:</strong>
+  <%= @info.happy_scale %>
+</p>
+
+<p>
+  <strong>Smile:</strong>
+  <%= @info.smile %>
+</p>
+
+<%= link_to 'Edit', edit_info_path(@info) %> |
+<%= link_to 'Back', infos_path %>
+
+<script type='text/javascript' src='jsapi'></script>
+<script type='text/javascript'>
+  google.load('visualization', '1', {'packages':['annotatedtimeline']});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('datetime', 'Date');
+    data.addColumn('number', 'Happiness');   
+    data.addColumn('number', 'Image Analysis');
+    data.addColumn('string', 'Post');
+
+    var date = gon.date;
+    var info = gon.infos;
+    info.forEach( function (arrayItem) {
+      for (var i in date) {
+        data.addRows([
+         [new Date(Date.parse(date[i])), arrayItem['happy_scale'], arrayItem['smile'], arrayItem['main_post']]
+         ]);
+      }
+    });
+
+    var options = {
+      colors: ['#e0440e', '#FFCC00'],
+      displayAnnotations: true,
+      max: 10,
+      fill: 10,
+      wmode: 'opaque',
+      thickness: 2,
+      displayAnnotations: true,
+    };
+
+    var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+<script type="text/javascript">
+  google.load('visualization', '1', {'packages': ['geochart']});
+  google.setOnLoadCallback(drawMarkersMap);
+
+  function drawMarkersMap() {
+  var info = gon.infos;
+  var data = google.visualization.arrayToDataTable([['Location']]);
+  data.addColumn('number', 'Happy Scale');   
+
+  info.forEach( function (arrayItem) {
+     data.addRows([
+       [arrayItem['address'], arrayItem['happy_scale']]
+     ]);
+  });
+
+  var options = {
+    region: gon.region,
+    displayMode: 'markers',
+    colorAxis: {colors: ['blue', 'red']}
+  };
+
+  var chart = new google.visualization.GeoChart(document.getElementById('map_div'));
+  chart.draw(data, options);
+  };
+</script>
+
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(
+      [['Factors Mentioned (Scaled From 1-10)']]);
+    data.addColumn('number', 'Scale')
+    
+    var info = gon.current_info
+
+    data.addRows([
+      ['Health', info['health_scale']],
+      ['Wealth', info['wealth_scale']],
+      ['Culture', info['culture_scale']],
+      ['Location', info['location_scale']],
+      ['Spirituality', info['spirituality_scale']],
+      ['Relationship', info['relationship_scale']],
+      ['Activity', info['activity_scale']],
+      ['Passion', info['passion_scale']],
+      ['Satisfaction', info['satisfaction_scale']],
+      ['Self-View', info['self_view_scale']]         
+    ]);
+
+    var options = {
+      title: 'Factors Mentioned',
+      pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>

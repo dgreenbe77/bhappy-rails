@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bhappy - Chart Your Personal Path to Happiness</title>
+  <%= include_gon %>
+  <link rel="Icon" href="/images/smiley.png">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= filepicker_js_include_tag %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <div class="sticky">
+
+    <div class="logo_bird">
+      <a href="/"><img src="/images/smileybird.png"></a>
+      <span class="logo_text">Bhappy</span>
+    </div>
+
+    <ul class="right">
+      <% if user_signed_in? %>
+      <li class="user"><%= current_user.email %></li>
+      <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+      <% else %>
+      <li class="active"><%= link_to "Sign Up", new_user_registration_path%></li>
+      <li class="active"><%= link_to "Sign In", new_user_session_path %></li>
+      <%end%>
+    </ul>
+
+    <ul class="left">
+      <li><a href="#">Chart</a></li>
+    </ul>
+
+      <span class="has-form">
+        <%= form_tag(search_infos_path, method: :get, class: 'large-3 small-3 columns') do %>
+          <div class="row collapse">
+            <div class="large-8 small-8 columns">
+               <%= text_field_tag 'Query', nil, class: '' %>
+            </div>
+            <div class="large-4 small-4 columns">
+              <%= submit_tag 'Search', class: 'alert button expand' %>
+            </div>
+          </div>
+        <% end %>
+      </span>
+    
+  </div>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+
+</body>
+
+</html>
