@@ -11,10 +11,8 @@ So the page doesn't have to load too much info at a time and isn't overwhelmed
   before(:each) do
     @user = FactoryGirl.create(:user)
     sign_in_as(@user)
-    FactoryGirl.create(:info, main_post: "Comercialization makes me a sad sad panda")
-    4.times do 
-      FactoryGirl.create(:info)
-    end
+    FactoryGirl.create(:info, main_post: "Comercialization makes me a sad sad panda", user: @user)
+    FactoryGirl.create_list(:info, 4, user: @user)
     visit '/logs'
   end
 
@@ -22,7 +20,7 @@ So the page doesn't have to load too much info at a time and isn't overwhelmed
 
     it 'only displays 5 posts postings a page' do
       expect(page).to have_content("Comercialization makes me a sad sad panda")
-      FactoryGirl.create(:info)
+      FactoryGirl.create(:info, user: @user)
       visit '/logs'
       expect(page).to_not have_content("Comercialization makes me a sad sad panda")
     end
