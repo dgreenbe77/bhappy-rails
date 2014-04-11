@@ -46,6 +46,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'dotenv-rails'
 end
 
 gem 'rails_12factor', group: :production

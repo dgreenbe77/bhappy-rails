@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+before_action :authenticate_user!
 
   def create
     @location = Location.new(location_params)
@@ -10,7 +11,7 @@ class LocationsController < ApplicationController
       @location.delete
     end
 
-    unless request.path == '/locations'
+    if params["commit"] == "Change Region"
       if @location.save
         redirect_to @info
       else

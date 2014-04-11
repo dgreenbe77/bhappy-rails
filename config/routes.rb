@@ -14,6 +14,13 @@ Bhappy::Application.routes.draw do
 
   get 'world' => 'infos#world'
 
+  namespace :api do
+    namespace :v1 do
+      resources :sessions
+      resources :registrations
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

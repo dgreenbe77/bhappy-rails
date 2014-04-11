@@ -1,19 +1,22 @@
 class InfosController < ApplicationController
   before_action :set_info, only: [:show, :edit, :update, :destroy]
   before_action :set_user
+  before_action :authenticate_user!, :except => [:index, :world]
+
+  respond_to :html, :json
 
   def index
   end
 
   def show
     @infos = @user.infos
-    # unless @info.image.blank? || @info.image == 'Add Image'
-    #   uri = URI::encode(@info.image)
-    #   @response = Unirest::get("https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?url=#{uri}&attribute=glass%2Cpose%2Cgender%2Cage%2Crace%2Csmiling",
-    #   headers:{
-    #     "X-Mashape-Authorization" => ENV['face_plus_api_key']
-    #   })
-    # end
+    unless @info.image.blank? || @info.image == 'Add Image'
+      uri = URI::encode(@info.image)
+      @response = Unirest::get("https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?url=#{uri}&attribute=glass%2Cpose%2Cgender%2Cage%2Crace%2Csmiling",
+      headers:{
+        "X-Mashape-Authorization" => ENV['face_plus_api_key']
+      })
+    end
     @location = Location.new
     gon.current_info = @info
     gon.infos = @infos.map(&:serializable_hash)
@@ -43,8 +46,8 @@ class InfosController < ApplicationController
       end
     end
     respond_to do |format|
-        format.html
-        format.json
+        format.html {  }
+        format.json {  }
     end
   end
 
