@@ -7,13 +7,13 @@ class InfosController < ApplicationController
 
   def show
     @infos = @user.infos
-    unless @info.image.blank? || @info.image == 'Add Image'
-      uri = URI::encode(@info.image)
-      @response = Unirest::get("https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?url=#{uri}&attribute=glass%2Cpose%2Cgender%2Cage%2Crace%2Csmiling",
-      headers:{
-        "X-Mashape-Authorization" => ENV['face_plus_api_key']
-      })
-    end
+    # unless @info.image.blank? || @info.image == 'Add Image'
+    #   uri = URI::encode(@info.image)
+    #   @response = Unirest::get("https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?url=#{uri}&attribute=glass%2Cpose%2Cgender%2Cage%2Crace%2Csmiling",
+    #   headers:{
+    #     "X-Mashape-Authorization" => ENV['face_plus_api_key']
+    #   })
+    # end
     @location = Location.new
     gon.current_info = @info
     gon.infos = @infos.map(&:serializable_hash)
