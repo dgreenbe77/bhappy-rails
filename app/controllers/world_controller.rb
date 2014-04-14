@@ -30,8 +30,17 @@ class WorldController < ApplicationController
       analysis.count_and_scale
       @happiness_log.happy = @happiness_log.positive_scale - @happiness_log.negative_scale
       @happiness_log.happy_scale = analysis.convert_scale_by_deviation('happy')
-      @happiness_log.save
-      redirect_to '/world'
+      # redirect_to '/world'
+
+      respond_to do |format|
+        if @happiness_log.save
+          format.html { redirect_to '/world' }
+          format.json { render json: 'index', status: :created }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @happiness_log.errors, status: :unprocessable_entity }
+        end
+      end
     end
   end
 

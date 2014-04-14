@@ -12,27 +12,27 @@ feature 'registered user filling out form', %q{
   before(:each) do
     sign_in_as(FactoryGirl.create(:user))
     FactoryGirl.create(:question)
-    visit new_info_path
-    @info = FactoryGirl.build(:info)
+    visit new_happiness_log_path
+    @happiness_log = FactoryGirl.build(:happiness_log)
   end
 
   context "filling out form" do
 
     it 'takes you to the show page when you enter valid information' do
-      fill_in 'info[title]', with: 'Happy Happy Good Post'
-      fill_in 'info[main_post]', with: @info.main_post
-      fill_in 'info[address]', with: @info.address
-      fill_in 'info_image', with: ''
+      fill_in 'happiness_log[title]', with: 'Happy Happy Good Post'
+      fill_in 'happiness_log[main_post]', with: @happiness_log.main_post
+      fill_in 'happiness_log[address]', with: @happiness_log.address
+      fill_in 'happiness_log_image', with: ''
       click_on 'Find Happiness'
 
       expect(page).to have_content("Post Data")
-      expect(page).to have_content(@info.main_post)
+      expect(page).to have_content(@happiness_log.main_post)
     end
 
     it 'requires a main post and a location' do
-      fill_in 'info[main_post]', with: ''
-      fill_in 'info[address]', with:''
-      fill_in 'info[title]', with: ''
+      fill_in 'happiness_log[main_post]', with: ''
+      fill_in 'happiness_log[address]', with:''
+      fill_in 'happiness_log[title]', with: ''
       click_on 'Find Happiness'
 
       expect(page).to have_content("Main post can't be blank")

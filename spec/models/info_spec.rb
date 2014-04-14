@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Info do
+describe HappinessLog do
   
   describe 'Validations' do
 

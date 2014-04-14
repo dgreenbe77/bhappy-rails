@@ -76,12 +76,12 @@ feature 'user trying to sign in', %q{
   context 'visiting pages while not signed in' do
 
     it 'redirects you to the sign in page when you are not signed in' do
-      visit new_info_path
+      visit new_happiness_log_path
       expect(page).to have_content('Remember me')
-      info = FactoryGirl.create(:info)
-      visit info_path(info)
+      happiness_log = FactoryGirl.create(:happiness_log)
+      visit happiness_log_path(happiness_log)
       expect(page).to have_content('Remember me')
-      visit edit_info_path(info)
+      visit edit_happiness_log_path(happiness_log)
       expect(page).to have_content('Remember me')
     end
 

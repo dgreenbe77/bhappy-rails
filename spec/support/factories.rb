@@ -5,7 +5,7 @@ FactoryGirl.define do
     password "adminqwerty"
   end
 
-  factory :info do
+  factory :happiness_log do
     main_post "hi a+ happy!"
     address "10 lakeville drive, boston, ma 02184"
     title "Happy Happy Good Post"

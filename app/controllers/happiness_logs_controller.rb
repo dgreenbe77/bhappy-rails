@@ -20,7 +20,6 @@ class HappinessLogsController < ApplicationController
       })
     end
 
-    binding.pry
     gon.current_happiness_log = @happiness_log
     gon.happiness_logs = @happiness_logs
     gon.date = @happiness_logs.pluck(:created_at)

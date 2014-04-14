@@ -5,7 +5,7 @@ describe User do
   describe 'Associations' do
 
     it {should have_one :location}
-    it {should have_many :infos}
+    it {should have_many :happiness_logs}
 
   end
 

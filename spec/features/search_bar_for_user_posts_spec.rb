@@ -12,7 +12,7 @@ So I can find the ones I'm looking for
   before(:each) do
     @user = FactoryGirl.create(:user)
     sign_in_as(@user)
-    @info = FactoryGirl.create(:info)
+    @happiness_log = FactoryGirl.create(:happiness_log)
   end
 
   context 'entering in search query' do
