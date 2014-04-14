@@ -1,4 +1,4 @@
-class Info < ActiveRecord::Base
+class HappinessLog < ActiveRecord::Base
   belongs_to :user
 
   validates :main_post, presence: true

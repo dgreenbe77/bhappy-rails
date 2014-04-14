@@ -23,14 +23,14 @@
 
 <div id="donutchart" style="width: 1300px; height: 500px;"></div>
 
-<% unless @info.image == "Add Image" || @info.image.blank? %>
-  <%= filepicker_image_tag @info.image, w: 400, h: 400, fit: 'clip', class: 'center' %>
-  <%= filepicker_save_button "Save", @info.image, "image/jpg" %>
+<% unless @happiness_log.image == "Add Image" || @happiness_log.image.blank? %>
+  <%= filepicker_image_tag @happiness_log.image, w: 400, h: 400, fit: 'clip', class: 'center' %>
+  <%= filepicker_save_button "Save", @happiness_log.image, "image/jpg" %>
 <% end %>
 
 <p>
   <strong>Main Post:</strong>
-  <%= @info.main_post %>
+  <%= @happiness_log.main_post %>
 </p>
 
 <% unless @response.nil? %>
@@ -38,22 +38,22 @@
 <% end %>
 
 <p>
-  <strong>Infos:</strong>
-  <%= @infos.map(&:serializable_hash)%>
+  <strong>Happiness Logs:</strong>
+  <%= @happiness_logs.map(&:serializable_hash)%>
 </p>
 
 <p>
   <strong>Happy:</strong>
-  <%= @info.happy_scale %>
+  <%= @happiness_log.happy_scale %>
 </p>
 
 <p>
   <strong>Smile:</strong>
-  <%= @info.smile %>
+  <%= @happiness_log.smile %>
 </p>
 
-<%= link_to 'Edit', edit_info_path(@info) %> |
-<%= link_to 'Back', infos_path %>
+<%= link_to 'Edit', edit_happiness_log_path(@happiness_log) %> |
+<%= link_to 'Back', happiness_logs_path %>
 
 <script type='text/javascript' src='jsapi'></script>
 <script type='text/javascript'>
@@ -67,8 +67,8 @@
     data.addColumn('string', 'Post');
 
     var date = gon.date;
-    var info = gon.infos;
-    info.forEach( function (arrayItem) {
+    var happiness_log = gon.happiness_logs;
+    happiness_log.forEach( function (arrayItem) {
       for (var i in date) {
         data.addRows([
          [new Date(Date.parse(date[i])), arrayItem['happy_scale'], arrayItem['smile'], arrayItem['main_post']]
@@ -97,11 +97,11 @@
   google.setOnLoadCallback(drawMarkersMap);
 
   function drawMarkersMap() {
-  var info = gon.infos;
+  var happiness_log = gon.happiness_logs;
   var data = google.visualization.arrayToDataTable([['Location']]);
   data.addColumn('number', 'Happy Scale');   
 
-  info.forEach( function (arrayItem) {
+  happiness_log.forEach( function (arrayItem) {
      data.addRows([
        [arrayItem['address'], arrayItem['happy_scale']]
      ]);
@@ -126,19 +126,19 @@
       [['Factors Mentioned (Scaled From 1-10)']]);
     data.addColumn('number', 'Scale')
     
-    var info = gon.current_info
+    var happiness_log = gon.current_happiness_log
 
     data.addRows([
-      ['Health', info['health_scale']],
-      ['Wealth', info['wealth_scale']],
-      ['Culture', info['culture_scale']],
-      ['Location', info['location_scale']],
-      ['Spirituality', info['spirituality_scale']],
-      ['Relationship', info['relationship_scale']],
-      ['Activity', info['activity_scale']],
-      ['Passion', info['passion_scale']],
-      ['Satisfaction', info['satisfaction_scale']],
-      ['Self-View', info['self_view_scale']]         
+      ['Health', happiness_log['health_scale']],
+      ['Wealth', happiness_log['wealth_scale']],
+      ['Culture', happiness_log['culture_scale']],
+      ['Location', happiness_log['location_scale']],
+      ['Spirituality', happiness_log['spirituality_scale']],
+      ['Relationship', happiness_log['relationship_scale']],
+      ['Activity', happiness_log['activity_scale']],
+      ['Passion', happiness_log['passion_scale']],
+      ['Satisfaction', happiness_log['satisfaction_scale']],
+      ['Self-View', happiness_log['self_view_scale']]         
     ]);
 
     var options = {

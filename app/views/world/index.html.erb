@@ -26,8 +26,8 @@ function drawChart() {
   data.addColumn('number', 'Happiness');
 
   var date = gon.date;
-  var info = gon.infos;
-  info.forEach( function (arrayItem) {
+  var happiness_log = gon.happiness_logs;
+  happiness_log.forEach( function (arrayItem) {
     for (var i in date) {
       data.addRows([
        [new Date(Date.parse(date[i])), arrayItem['happy_scale']]
@@ -48,18 +48,18 @@ function drawChart() {
 
   chart.draw(data, options);
 }
-
 </script>
+
 <script type="text/javascript">
   google.load('visualization', '1', {'packages': ['geochart']});
   google.setOnLoadCallback(drawMarkersMap);
 
   function drawMarkersMap() {
-  var info = gon.infos;
+  var happiness_logs = gon.happiness_logs;
   var data = google.visualization.arrayToDataTable([['Location']]);
   data.addColumn('number', 'Happy Scale');   
 
-  info.forEach( function (arrayItem) {
+  happiness_logs.forEach( function (arrayItem) {
      data.addRows([
        [arrayItem['address'], arrayItem['happy_scale']]
      ]);

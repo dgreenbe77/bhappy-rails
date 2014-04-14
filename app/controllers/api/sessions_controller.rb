@@ -1,4 +1,4 @@
-class Api::V1::SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   protect_from_forgery except: [:create, :destroy]
 
   def create

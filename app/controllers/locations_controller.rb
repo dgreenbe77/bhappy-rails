@@ -1,10 +1,11 @@
 class LocationsController < ApplicationController
-before_action :authenticate_user!
+  before_action :authenticate_user!
+  protect_from_forgery with: :exception
 
   def create
     @location = Location.new(location_params)
     @user = current_user
-    @info = Info.find_by(params[:info_id])
+    @happiness_log = HappinessLog.find_by(params[:happiness_log_id])
     @user.location = @location
 
     if @location.region == 'world'
@@ -13,9 +14,9 @@ before_action :authenticate_user!
 
     if params["commit"] == "Change Region"
       if @location.save
-        redirect_to @info
+        redirect_to @happiness_log
       else
-        redirect_to @info
+        redirect_to @happiness_log
       end
     else
       if @location.save

@@ -1,11 +1,11 @@
-<%= form_for(@info) do |f| %>
+<%= form_for(@happiness_log) do |f| %>
 
-  <% if @info.errors.any? %>
+  <% if @happiness_log.errors.any? %>
 
     <div id="error_explanation">
-      <h3><%= pluralize(@info.errors.count, "error") %> Invalid Post:</h3>
+      <h3><%= pluralize(@happiness_log.errors.count, "error") %> Invalid Post:</h3>
       <ul>
-      <% @info.errors.full_messages.each do |msg| %>
+      <% @happiness_log.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

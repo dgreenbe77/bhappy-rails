@@ -1,4 +1,4 @@
-class Api::V1::RegistrationsController < Devise::RegistrationsController
+class Api::RegistrationsController < Devise::RegistrationsController
   # Other code
 
   def create
