@@ -21,7 +21,6 @@
 
     <ul class="right">
       <% if user_signed_in? %>
-      <li class="user"><%= current_user.email %></li>
       <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
       <% else %>
       <li class="active"><%= link_to "Sign Up", new_user_registration_path%></li>
@@ -33,19 +32,28 @@
       <li><a href="#">Chart</a></li>
     </ul>
 
-      <span class="has-form">
-        <%= form_tag(search_happiness_logs_path, method: :get, class: 'large-3 small-3 columns') do %>
-          <div class="row collapse">
-            <div class="large-8 small-8 columns">
-               <%= text_field_tag 'Query', nil, class: '' %>
-            </div>
-            <div class="large-4 small-4 columns">
-              <%= submit_tag 'Search', class: 'alert button expand' %>
-            </div>
+    <span class="has-form">
+      <%= form_tag(search_happiness_logs_path, method: :get, class: 'large-3 small-3 columns') do %>
+        <div class="row collapse">
+          <div class="large-8 small-8 columns">
+             <%= text_field_tag 'Query', nil, class: '' %>
           </div>
-        <% end %>
-      </span>
-    
+          <div class="large-4 small-4 columns">
+            <%= submit_tag 'Search', class: 'alert button expand' %>
+          </div>
+        </div>
+      <% end %>
+    </span>
+  
+    <div id="user_nav">
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <% end %>
+    </div>
+
   </div>
 
   <p class="notice"><%= notice %></p>
