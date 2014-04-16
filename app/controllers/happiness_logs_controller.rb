@@ -1,9 +1,8 @@
 class HappinessLogsController < ApplicationController
   before_action :set_happiness_log, only: [:show, :edit, :update, :destroy]
   before_action :set_user
-  before_action :authenticate_user!, :except => [:index, :world]
+  before_action :authenticate_user!, :except => [:index]
   protect_from_forgery with: :exception
-  # respond_to :html, :json
 
   def index
   end
@@ -43,6 +42,7 @@ class HappinessLogsController < ApplicationController
   end
 
   def new
+    @question = Question.random_question
     @happiness_log = HappinessLog.new
   end
 
@@ -52,11 +52,18 @@ class HappinessLogsController < ApplicationController
   def create
     @happiness_log = HappinessLog.new(happiness_log_params)
     @user.happiness_logs << @happiness_log
-    FacialRecognition.api(@happiness_log)
     analysis = WordAnalysis.new(@happiness_log, @user)
+    FacialRecognition.api(@happiness_log, analysis)
     analysis.count_and_scale
     @happiness_log.happy = @happiness_log.positive_scale - @happiness_log.negative_scale
     @happiness_log.happy_scale = analysis.convert_scale_by_deviation('happy')
+
+    if Question.where(positiveq: params[:question]).exists? && @happiness_log.happy_scale > 8
+      analysis.learning('positive')
+    elsif Question.where(negativeq: params[:question]).exists? && @happiness_log.happy_scale < 2
+      analysis.learning('negative')     
+    end
+
     respond_to do |format|
       if @happiness_log.save
         format.html { redirect_to @happiness_log }
@@ -69,6 +76,18 @@ class HappinessLogsController < ApplicationController
   end
 
   def update
+    FacialRecognition.api(@happiness_log)
+    analysis = WordAnalysis.new(@happiness_log, @user)
+    analysis.count_and_scale
+    @happiness_log.happy = @happiness_log.positive_scale - @happiness_log.negative_scale
+    @happiness_log.happy_scale = analysis.convert_scale_by_deviation('happy')
+
+    if Question.where(positiveq: params[:question]).exists? && @happiness_log.happy_scale > 8
+      analysis.learning('positive')
+    elsif Question.where(negativeq: params[:question]).exists? && @happiness_log.happy_scale < 2
+      analysis.learning('negative')     
+    end
+
     respond_to do |format|
       if @happiness_log.update(happiness_log_params)
         format.html { redirect_to @happiness_log }
@@ -98,7 +117,7 @@ class HappinessLogsController < ApplicationController
     end
 
     def happiness_log_params
-      params.require(:happiness_log).permit(:address, :main_post, :image, :title)
+      params.require(:happiness_log).permit(:question, :address, :main_post, :image, :title)
     end
 
 end

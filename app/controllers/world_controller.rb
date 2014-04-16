@@ -1,5 +1,4 @@
 class WorldController < ApplicationController
-  respond_to :html, :json
 
   def index
     if params.keys.include?('email')
@@ -35,7 +34,7 @@ class WorldController < ApplicationController
       respond_to do |format|
         if @happiness_log.save
           format.html { redirect_to '/world' }
-          format.json { render json: 'index', status: :created }
+          format.json { head :no_content }
         else
           format.html { render action: 'new' }
           format.json { render json: @happiness_log.errors, status: :unprocessable_entity }

@@ -1,7 +1,6 @@
 <%= form_for(@happiness_log) do |f| %>
 
   <% if @happiness_log.errors.any? %>
-
     <div id="error_explanation">
       <h3><%= pluralize(@happiness_log.errors.count, "error") %> Invalid Post:</h3>
       <ul>
@@ -10,12 +9,10 @@
       <% end %>
       </ul>
     </div>
-    
   <% end %>
 
   <script>
     function helloWorld(event){
-      debugger;
       var url = null;
       var file = event.fpfiles;
       url = file.forEach(function (array) { url = array['url']} )
@@ -29,18 +26,18 @@
 
   <br>
 
-  <% offset = rand(Question.count) %>
-
   <div>
-    <%= f.label "Post Title" %>
+    <%= f.label "Post Title:" %>
     <%= f.text_area :title %> 
   </div>
 
   <div>
-    <%= f.label "#{Question.first(offset: offset).main_postq}" %>
+    <%= f.label @question %>
     <%= f.text_area :main_post, rows: 20 %>
   </div>
   
+  <%= hidden_field_tag :question, @question %>
+
   <div>
     <%= f.label "Enter Location / Address: " %>
     <%= f.text_area :address %>

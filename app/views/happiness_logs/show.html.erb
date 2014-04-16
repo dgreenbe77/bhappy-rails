@@ -1,4 +1,5 @@
 <h2> Post Data: </h2>
+<%= Demographic.compare_age_ranges(5, 25, 15, 65) %> 
 <h5>  Add Posts to See More Accurate Data </h5>
 
 <div id='chart_div' style='width: 1200px; height: 640px;'></div>
@@ -69,7 +70,7 @@
     happiness_log.forEach( function (arrayItem) {
       for (var i in date) {
         data.addRows([
-         [new Date(Date.parse(date[i])), arrayItem['happy_scale'], arrayItem['smile'], arrayItem['main_post']]
+         [new Date(Date.parse(date[i])), arrayItem['happy_scale'], arrayItem['smile_scale'], arrayItem['main_post']]
          ]);
       }
     });

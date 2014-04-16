@@ -16,10 +16,10 @@
   <h1 class="whole_logo"><a href="/"><img src="/images/smiley.png" class="logo">BHappy</a></h1>
 </div>
 
-<div class="birds" id="smileybirds">
-  <img src="/images/smileybird.png" class="bird1">
-  <img src="/images/smileybird1.png" class="bird2">
-  <img src="/images/smileybird2.png" class="bird3">
+<div class="birds" >
+  <img src="/images/smileybird.png" class="bird1" id="smileybird1">
+  <img src="/images/smileybird1.png" class="bird2" id="smileybird2">
+  <img src="/images/smileybird2.png" class="bird3" id="smileybird3">
 </div>
 
 <div class="large-4 medium-4 columns" id="smiley">
@@ -47,19 +47,28 @@
 
 <script>
   var currentPos = 0;
-  var birds = document.getElementById("smileybirds");
+  var bird1 = document.getElementById("smileybird1");
+  var bird2 = document.getElementById("smileybird2");
+  var bird3 = document.getElementById("smileybird3");  
   var bodWidth = screen.availWidth;
   var birdPos = -215;
 
   function move() {
     if (currentPos < (bodWidth + 500)) {
-
-      currentPos = parseInt(birds.style.right ?
-        birds.style.right : birdPos) + 5;
-
-      birds.style.right = currentPos + "px";
-
+      currentPos = parseInt(bird1.style.right ?
+                   bird1.style.right : birdPos) + 8;
+      bird1.style.right = currentPos + "px";
       setTimeout("move()", 20);
+    }
+    if (currentPos < (bodWidth + 500)) {
+      currentPos = parseInt(bird2.style.right ?
+                   bird2.style.right : birdPos) + 5;
+      bird2.style.right = currentPos + "px";
+    }
+    if (currentPos < (bodWidth + 500)) {
+      currentPos = parseInt(bird3.style.right ?
+                   bird3.style.right : birdPos) + 5;
+      bird3.style.right = currentPos + "px";
     }
   }
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412133205) do
+ActiveRecord::Schema.define(version: 20140416004916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20140412133205) do
     t.integer  "happy",              default: 0
     t.string   "address",                          null: false
     t.string   "title",                            null: false
+    t.string   "question"
+    t.integer  "min_age"
+    t.integer  "max_age"
+    t.string   "gender"
+    t.float    "gender_confidence"
+    t.string   "race"
+    t.float    "race_confidence"
+    t.float    "smile_scale"
   end
 
   create_table "locations", force: true do |t|
@@ -62,12 +70,14 @@ ActiveRecord::Schema.define(version: 20140412133205) do
   end
 
   create_table "questions", force: true do |t|
-    t.string   "main_postq", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "positiveq",  null: false
+    t.string   "negativeq",  null: false
   end
 
-  add_index "questions", ["main_postq"], name: "index_questions_on_main_postq", unique: true, using: :btree
+  add_index "questions", ["negativeq"], name: "index_questions_on_negativeq", unique: true, using: :btree
+  add_index "questions", ["positiveq"], name: "index_questions_on_positiveq", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",       null: false

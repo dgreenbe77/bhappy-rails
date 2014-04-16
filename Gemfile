@@ -11,6 +11,8 @@ gem 'simple_form'
 
 gem 'kaminari'
 
+gem 'omniauth-facebook'
+
 gem 'unirest'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
