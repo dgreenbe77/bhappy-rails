@@ -5,8 +5,4 @@ class ApplicationController < ActionController::Base
   # before_action :authenticate_user!, unless: :devise_controller?
   private
 
-  def current_user
-    @current_user ||= FacebookUser.find(session[:facebook_user_id]) if session[:facebook_user_id]
-  end
-  helper_method :current_user
 end

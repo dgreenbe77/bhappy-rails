@@ -21,10 +21,10 @@
 
     <ul class="right">
       <% if user_signed_in? %>
-      <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+        <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
       <% else %>
-      <li class="active"><%= link_to "Sign Up", new_user_registration_path%></li>
-      <li class="active"><%= link_to "Sign In", new_user_session_path %></li>
+        <li class="active"><%= link_to "Sign Up", new_user_registration_path%></li>
+        <li class="active"><%= link_to "Sign In", new_user_session_path %></li>
       <%end%>
     </ul>
 
@@ -45,14 +45,7 @@
       <% end %>
     </span>
   
-    <div id="user_nav">
-      <% if current_user %>
-        Signed in as <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-      <% end %>
-    </div>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 
   </div>
 
@@ -62,5 +55,9 @@
   <%= yield %>
 
 </body>
+
+<script>
+  $.stellar();
+</script>
 
 </html>

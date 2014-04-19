@@ -1,5 +1,6 @@
 Bhappy::Application.routes.draw do
-  devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+                   controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :happiness_logs, path: 'happy' do
     get 'search', on: :collection
@@ -20,9 +21,9 @@ Bhappy::Application.routes.draw do
     resources :registrations
   end
 
-  match 'auth/:provider/callback', to: 'sessions#create', via: :all
-  match 'auth/failure', to: redirect('/'), via: :all
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: :all
+  # match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  # match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  # match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

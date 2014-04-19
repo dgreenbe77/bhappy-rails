@@ -6,6 +6,8 @@
 
 .happy {
     box-shadow: 0px 0px 120px 40px white;
+    z-index: 11;
+    position: relative;
 }
 
 .logo_bird {
@@ -255,22 +257,113 @@
     color: rgba(185, 185, 185, 1);
 }
 
-.bg {
-  min-height: 100%;
-  min-width: 100%;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+
+.chart1 {
+    position: absolute;
+    top: 1000px;
+    left: 150px;
+    z-index: 12;
+    min-height: 70%;
+    min-width: 70%;
+    width: 70%;
+    height: 70%;
 }
 
-.fg {
-  min-height: 100%;
-  min-width: 100%;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+.chart2 {
+    position: absolute;
+    top: 1700px;
+    left: 150px;
+    z-index: 12;
+    min-height: 70%;
+    min-width: 70%;
+    width: 70%;
+    height: 70%;
 }
+
+.fg_left {
+    min-height: 10%;
+    min-width: 10%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 330px;
+    left: 0;
+    z-index: 10;
+}
+
+.fg_right {
+    min-height: 10%;
+    min-width: 10%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 200px;
+    right: 0;
+    z-index: 10;
+}
+
+.fg_center {
+    min-height: 10%;
+    min-width: 10%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 295px;
+    left: -30px;
+    z-index: 10;
+}
+
+.lower_fg_left {
+    min-height: 10%;
+    min-width: 10%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 1000px;
+    left: 0;
+    z-index: 10;
+}
+
+.lower_fg_right {
+    min-height: 10%;
+    min-width: 10%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 1000px;
+    right: 0;
+    z-index: 10;
+}
+
+.cloud_left {
+    top: 270px;
+}
+
+.mountain1 {
+    top: 250px;
+    z-index: 10;
+}
+
+.mountain2 {
+    top: 220px;
+    z-index: 10;
+}
+
+.mountain3 {
+    top: 180px;
+    z-index: 10;
+}
+
+.bg {
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
+

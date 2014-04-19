@@ -7,6 +7,8 @@ gem 'filepicker-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem "koala", "~> 1.8.0rc1"
+
 gem 'simple_form'
 
 gem 'kaminari'
