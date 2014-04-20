@@ -9,7 +9,6 @@ class WorldController < ApplicationController
       analysis.count_and_scale
       @happiness_log.happy = @happiness_log.positive_scale - @happiness_log.negative_scale
       @happiness_log.happy_scale = analysis.convert_scale_by_deviation('happy')
-      # redirect_to '/world'
 
       respond_to do |format|
         if @happiness_log.save

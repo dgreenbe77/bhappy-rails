@@ -11,6 +11,10 @@
 </head>
 
 <body>
+  <div class="background">
+    <img src="/images/sky.png" class="bg">
+  </div>
+
   <% if content_for?(:navbar) %>
   
     <div class="sticky">
@@ -52,7 +56,6 @@
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
-
 </body>
 
 <script>
