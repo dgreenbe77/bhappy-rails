@@ -2,61 +2,77 @@
   <section class="navbar"></section>
 <% end %>
 
-<h2> Post Data: </h2>
+<img src="/images/cloud1.png" class="cloud_title">
+<h1 align="center" class="show_cloud_title_text"> Post Data: </h1>
+<br><br><br><br>
 <%= Demographic.compare_age_ranges(5, 25, 15, 65) %> 
 <h5>  Add Posts to See More Accurate Data </h5>
 
-<div id='chart_div' style='width: 1200px; height: 640px;'></div>
+<img src="/images/cloud1.png" class="show_cloud_chart2">
+<p class="show_cloud_chart1_text">Personal Happiness Timeline</p>
 
-<br><br>
+<div class="show_chart1" id='chart_div' style='width: 700px; height: 700px;'></div>
 
-<div id="map_div" style="width: 900px; height: 900;"></div>
+<div class="show_chart2" id="map_div" style="width: 700px; height: 700;"></div>
 
-<br><br>
+<img src="/images/cloud1.png" class="show_cloud_chart1">
+<p class="show_cloud_chart2_text">Personal Happiness Map</p>
 
-<%= simple_form_for(@location) do |r| %>
-  <%= r.select(:region, IsoCountryCodes.for_select) %>
-  <%= r.submit "Change Region" %>
-<% end %>
+<div class="show_chart2_buttons">
+  <%= simple_form_for(@location) do |r| %>
+    <%= r.select(:region, IsoCountryCodes.for_select) %>
+    <%= r.submit "Change Location" %>
+  <% end %>
 
-<%= simple_form_for(@location) do |r| %>
-  <%= r.hidden_field :region, value: "world" %>
-  <%= r.submit "See World" %>
-<% end %>
+  <%= simple_form_for(@location) do |r| %>
+    <%= r.hidden_field :region, value: "world" %>
+    <%= r.submit "See World" %>
+  <% end %>
+</div>
 
-<div id="donutchart" style="width: 1300px; height: 500px;"></div>
+<div class="show_scales">
+  <img src="/images/scale.png" class="show_scale1">
+  <img src="/images/scale.png" class="show_scale2">
+</div>
 
-<% unless @happiness_log.image == "Add Image" || @happiness_log.image.blank? %>
-  <%= filepicker_image_tag @happiness_log.image, w: 400, h: 400, fit: 'clip', class: 'center' %>
-  <%= filepicker_save_button "Save", @happiness_log.image, "image/jpg" %>
-<% end %>
+<img src="/images/cloud1.png" class="show_cloud_chart3">
+<p class="show_cloud_chart3_text">Factors Mentioned</p>
 
-<p>
-  <strong>Main Post:</strong>
-  <%= @happiness_log.main_post %>
-</p>
+<div class="show_chart3" id="donutchart" style="width: 700; height: 700px;"></div>
 
-<% unless @response.nil? %>
-  <h1><%= @response.body["face"] %></h1>
-<% end %>
+<div class="scroll_container2">
+  <% unless @happiness_log.image == "Add Image" || @happiness_log.image.blank? %>
+    <%= filepicker_image_tag @happiness_log.image, w: 400, h: 400, fit: 'clip', class: 'center' %>
+    <%= filepicker_save_button "Save", @happiness_log.image, "image/jpg" %>
+  <% end %>
 
-<p>
-  <strong>Happiness Logs:</strong>
-  <%= @happiness_logs.map(&:serializable_hash)%>
-</p>
+  <p>
+    <strong>Main Post:</strong>
+    <%= @happiness_log.main_post %>
+  </p>
 
-<p>
-  <strong>Happy:</strong>
-  <%= @happiness_log.happy_scale %>
-</p>
+  <% unless @response.nil? %>
+    <h1><%= @response.body["face"] %></h1>
+  <% end %>
 
-<p>
-  <strong>Smile:</strong>
-  <%= @happiness_log.smile %>
-</p>
+  <p>
+    <strong>Happiness Logs:</strong>
+    <%= @happiness_logs.map(&:serializable_hash)%>
+  </p>
 
-<%= link_to 'Edit', edit_happiness_log_path(@happiness_log) %> |
-<%= link_to 'Back', happiness_logs_path %>
+  <p>
+    <strong>Happy:</strong>
+    <%= @happiness_log.happy_scale %>
+  </p>
+
+  <p>
+    <strong>Smile:</strong>
+    <%= @happiness_log.smile %>
+  </p>
+
+  <%= link_to 'Edit', edit_happiness_log_path(@happiness_log) %> |
+  <%= link_to 'Back', happiness_logs_path %>
+</div>
 
 <script type='text/javascript' src='jsapi'></script>
 <script type='text/javascript'>

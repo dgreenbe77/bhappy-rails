@@ -4,16 +4,17 @@ Bhappy::Application.routes.draw do
 
   resources :happiness_logs, path: 'happy' do
     get 'search', on: :collection
+    get 'logs', on: :collection
   end
 
-  resources :locations
-  resources :world
+  resources :locations, only: [:create]
+  resources :world, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'happiness_logs#index'
-  get 'logs' => 'happiness_logs#logs'
+  # get 'logs' => 'happiness_logs#logs'
   # get 'world' => 'happiness_logs#world'
 
   namespace :api do

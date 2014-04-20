@@ -9,6 +9,19 @@
   </div>
 </div>
 
+<img src="/images/cloud1.png" class="cloud_login_right">
+<div class="login_logout_right">
+  <% if user_signed_in? %>
+    <span class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></span>
+  <% else %>
+    <span class="active"><%= link_to "Sign In", new_user_session_path %></span>
+  <%end%>
+</div>
+
+<div class="logs">
+  <%= link_to "Happiness Logs", logs_happiness_logs_path %>
+</div>
+
 <div class="logo_cloud">
   <img src="/images/cloud1.png">
   <h1 class="whole_logo"><a href="/"><img src="/images/smiley.png" class="logo">BHappy</a></h1>
@@ -37,6 +50,22 @@
   <img src="/images/cloud_cluster3.png" data-stellar-ratio="1.2"  class="cloud_cluster1">
   <img src="/images/cloud1.png" data-stellar-ratio="1.4"  class="cloud_cluster2">
 </div>
+
+    <div class="search">
+      <img src="/images/cloud1.png" class="cloud_search2">
+      <span class="has-form search_bar2">
+        <%= form_tag(search_happiness_logs_path, method: :get, class: 'large-3 small-3 columns') do %>
+          <div class="row collapse">
+            <div class="large-8 small-8 columns">
+               <%= text_field_tag 'Query', nil, class: '' %>
+            </div>
+            <div class="large-4 small-4 columns">
+              <%= submit_tag 'Search', class: 'alert button small round expand' %>
+            </div>
+          </div>
+        <% end %>
+      </span>
+    </div>
 
 <div>
   <%= link_to "Find Happiness", new_happiness_log_path, class: "happy large round button"%>

@@ -20,9 +20,9 @@ class LocationsController < ApplicationController
       end
     else
       if @location.save
-        redirect_to '/world'
+        redirect_to '/'
       else
-        redirect_to '/world'
+        redirect_to '/'
       end
     end
   end

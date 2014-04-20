@@ -64,6 +64,7 @@ class HappinessLogsController < ApplicationController
   end
 
   def edit
+    @question = Question.random_question
   end
 
   def create

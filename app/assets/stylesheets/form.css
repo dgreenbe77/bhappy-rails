@@ -9,10 +9,46 @@
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: fixed;
-    top: 20%;
+    top: 25%;
     left: 20%;
     margin-top: -30px;
     margin-left: -100px;
+    text-align: center;
+}
+
+.scroll_container2 {
+    width: 80%;
+    height: 75%;
+    min-width: 80%;
+    min-height: 75%;
+    background: white;
+    overflow: scroll;
+    border:5px solid gray;
+    border-radius: 5px 20px 5px;
+    background: #EBF5F7;
+    position: absolute;
+    top: 430%;
+    left: 20%;
+    margin-top: -30px;
+    margin-left: -100px;
+    margin-bottom: 40px;
+}
+
+.left_scroll {
+    width: 60%;
+    height: 75%;
+    min-width: 60%;
+    min-height: 75%;
+    background: white;
+    overflow: scroll;
+    border:5px solid gray;
+    border-radius: 5px 20px 5px;
+    background: #EBF5F7;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    margin-top: 0px;
+    margin-left: -200px;    
 }
 
 .text {

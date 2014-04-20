@@ -15,8 +15,7 @@
     <img src="/images/sky.png" class="bg">
   </div>
 
-  <% if content_for?(:navbar) %>
-  
+  <% if content_for?(:navbar) %>  
     <div class="sticky">
 
     <div class="logo_bird">
@@ -24,36 +23,34 @@
       <span class="logo_text">Bhappy</span>
     </div>
 
-    <ul class="right">
+    <img src="/images/cloud1.png" class="cloud_login">
+    <div class="login_logout">
       <% if user_signed_in? %>
-        <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+        <span class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></span>
       <% else %>
-        <li class="active"><%= link_to "Sign Up", new_user_registration_path%></li>
-        <li class="active"><%= link_to "Sign In", new_user_session_path %></li>
+        <span class="active"><%= link_to "Sign In", new_user_session_path %></span>
       <%end%>
-    </ul>
+    </div>
 
-    <ul class="left">
-      <li><a href="#">Chart</a></li>
-    </ul>
-
-    <span class="has-form">
-      <%= form_tag(search_happiness_logs_path, method: :get, class: 'large-3 small-3 columns') do %>
-        <div class="row collapse">
-          <div class="large-8 small-8 columns">
-             <%= text_field_tag 'Query', nil, class: '' %>
+    <div class="search">
+      <img src="/images/cloud1.png" class="cloud_search">
+      <span class="has-form search_bar">
+        <%= form_tag(search_happiness_logs_path, method: :get, class: 'large-3 small-3 columns') do %>
+          <div class="row collapse">
+            <div class="large-8 small-8 columns">
+               <%= text_field_tag 'Query', nil, class: '' %>
+            </div>
+            <div class="large-4 small-4 columns">
+              <%= submit_tag 'Search', class: 'alert button small round expand' %>
+            </div>
           </div>
-          <div class="large-4 small-4 columns">
-            <%= submit_tag 'Search', class: 'alert button expand' %>
-          </div>
-        </div>
-      <% end %>
-    </span>
+        <% end %>
+      </span>
+    </div>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <% end %>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
   <%= yield %>
 </body>
