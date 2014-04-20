@@ -1,28 +1,5 @@
-== README
+Uses a Facial Recognition API, the Facebook API and FQL, OAuth, Javascript Annotated Time Line ￼￼and Geo Bubble Charts, Sentiment and Demographic Analysis, and Natural Language ￼Understanding (NLU) to deconstruct posts and pictures to map out a variety of factors related to happiness over time and location. Also, it charts out a view of world happiness. Adding a learning aspect with user input.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hooks up to the Bhappy API in order to allow users to view and create posts for language analysis (Natural Language Understanding) on the go, so they can express how they feel at any given time:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+https://github.com/dgreenbe77/bhappy-rubymotion-iOS-mobile
