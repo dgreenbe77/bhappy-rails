@@ -1,3 +1,7 @@
+<div class='fb-sign-in'>
+  <%= link_to image_tag("/images/fb_login.png"), user_omniauth_authorize_path(:facebook) %>
+</div>
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

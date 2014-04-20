@@ -11,8 +11,9 @@
 </head>
 
 <body>
-
-  <div class="sticky">
+  <% if content_for?(:navbar) %>
+  
+    <div class="sticky">
 
     <div class="logo_bird">
       <a href="/"><img src="/images/smileybird.png"></a>
@@ -44,10 +45,8 @@
         </div>
       <% end %>
     </span>
-  
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 
-  </div>
+  <% end %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

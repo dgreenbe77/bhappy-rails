@@ -1,3 +1,7 @@
+<div class='fb-sign-in'>
+  <%= link_to image_tag("/images/fb_login.png"), user_omniauth_authorize_path(:facebook) %>
+</div>
+
 <h2>Sign in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -15,9 +19,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-
-<div id="fb-root">
-  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-</div>
 
 <script ></script>

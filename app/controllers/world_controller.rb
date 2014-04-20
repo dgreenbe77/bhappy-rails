@@ -1,25 +1,5 @@
 class WorldController < ApplicationController
 
-  def index
-    if params.keys.include?('email')
-      @user = User.where(email: params['email']).first
-      @happiness_logs = @user.happiness_logs
-    else
-      @user = current_user
-      @happiness_logs = HappinessLog.all
-    end
-
-    gon.happiness_logs = @happiness_logs
-    gon.date = @happiness_logs.pluck(:created_at)
-    @location = Location.new
-
-    unless @user.blank?
-      unless @user.location.blank?
-        gon.region = @user.location.region
-      end
-    end
-  end
-
   def create
     if params.keys.include?('email')
       @user = User.where(email: params['email']).first
