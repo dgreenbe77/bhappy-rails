@@ -50,9 +50,9 @@
 }
 
 .logs {
-    left: 700px;
-    top: 90px;
-    font-size: 30px;
+    left: 690px;
+    top: 60px;
+    font-size: 27px;
     position: absolute;
     z-index: 10;
 }

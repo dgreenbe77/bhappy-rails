@@ -5,14 +5,7 @@ class HappinessLogsController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
-    if params.keys.include?('email')
-      @user = User.where(email: params['email']).first
-      @happiness_logs = @user.happiness_logs
-    else
-      @user = current_user
-      @happiness_logs = HappinessLog.all
-    end
-
+    set_user_for_index
     gon.happiness_logs = @happiness_logs
     gon.date = @happiness_logs.pluck(:created_at)
     @location = Location.new
@@ -61,17 +54,7 @@ class HappinessLogsController < ApplicationController
   def create
     @happiness_log = HappinessLog.new(happiness_log_params)
     @user.happiness_logs << @happiness_log
-    analysis = WordAnalysis.new(@happiness_log, @user)
-    FacialRecognition.api(@happiness_log, analysis)
-    analysis.count_and_scale
-    @happiness_log.happy = @happiness_log.positive_scale - @happiness_log.negative_scale
-    @happiness_log.happy_scale = analysis.convert_scale_by_deviation('happy')
-
-    if Question.where(positiveq: params[:question]).exists? && @happiness_log.happy_scale > 8
-      analysis.learning('positive')
-    elsif Question.where(negativeq: params[:question]).exists? && @happiness_log.happy_scale < 2
-      analysis.learning('negative')     
-    end
+    happiness_log_analysis
 
     respond_to do |format|
       if @happiness_log.save
@@ -85,17 +68,7 @@ class HappinessLogsController < ApplicationController
   end
 
   def update
-    FacialRecognition.api(@happiness_log)
-    analysis = WordAnalysis.new(@happiness_log, @user)
-    analysis.count_and_scale
-    @happiness_log.happy = @happiness_log.positive_scale - @happiness_log.negative_scale
-    @happiness_log.happy_scale = analysis.convert_scale_by_deviation('happy')
-
-    if Question.where(positiveq: params[:question]).exists? && @happiness_log.happy_scale > 8
-      analysis.learning('positive')
-    elsif Question.where(negativeq: params[:question]).exists? && @happiness_log.happy_scale < 2
-      analysis.learning('negative')     
-    end
+    happiness_log_analysis
 
     respond_to do |format|
       if @happiness_log.update(happiness_log_params)
@@ -129,4 +102,30 @@ class HappinessLogsController < ApplicationController
       params.require(:happiness_log).permit(:question, :address, :main_post, :image, :title)
     end
 
+    def learning_filter(analysis)
+      if Question.where(positiveq: params[:question]).exists? && @happiness_log.happy_scale > 8
+        analysis.learning('positive')
+      elsif Question.where(negativeq: params[:question]).exists? && @happiness_log.happy_scale < 2
+        analysis.learning('negative')     
+      end
+    end
+
+    def happiness_log_analysis
+      analysis = WordAnalysis.new(@happiness_log, @user)
+      analysis.count_and_scale
+      @happiness_log.happy = @happiness_log.positive_scale - @happiness_log.negative_scale
+      @happiness_log.happy_scale = analysis.convert_scale_by_deviation('happy')
+      learning_filter(analysis)
+      FacialRecognition.api(@happiness_log, analysis)
+    end
+
+    def set_user_for_index
+      if params.keys.include?('email')
+        @user = User.where(email: params['email']).first
+        @happiness_logs = @user.happiness_logs
+      else
+        @user = current_user
+        @happiness_logs = HappinessLog.all
+      end
+    end
 end
