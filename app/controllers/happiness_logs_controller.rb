@@ -27,15 +27,6 @@ class HappinessLogsController < ApplicationController
   def show
     @happiness_logs = @user.happiness_logs
     @location = Location.new
-
-    unless @happiness_log.image.blank? || @happiness_log.image == 'Add Image'
-      uri = URI::encode(@happiness_log.image)
-      @response = Unirest::get("https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?url=#{uri}&attribute=glass%2Cpose%2Cgender%2Cage%2Crace%2Csmiling",
-      headers:{
-        "X-Mashape-Authorization" => ENV['face_plus_api_key']
-      })
-    end
-
     gon.current_happiness_log = @happiness_log
     gon.happiness_logs = @happiness_logs
     gon.date = @happiness_logs.pluck(:created_at)
