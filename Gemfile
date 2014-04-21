@@ -7,13 +7,17 @@ gem 'filepicker-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-gem "koala", "~> 1.8.0rc1"
-
 gem 'simple_form'
 
 gem 'kaminari'
 
 gem 'omniauth-facebook'
+
+gem 'omniauth-twitter'
+
+gem "koala", "~> 1.8.0rc1"
+
+gem 'twitter'
 
 gem 'unirest'
 # Use SCSS for stylesheets

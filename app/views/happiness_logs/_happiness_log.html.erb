@@ -1,6 +1,6 @@
 <tr>
-  <p><%= happiness_log.main_post %></p>
-  <p><%= happiness_log.address %></p>
+  <p>Post: <br> <%= happiness_log.main_post %></p>
+  <p>Location: <%= happiness_log.address %></p>
   <td><%= link_to 'Show', happiness_log %></td> |
   <td><%= link_to 'Edit', edit_happiness_log_path(happiness_log) %></td> |
   <td><%= link_to 'Destroy', happiness_log, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>

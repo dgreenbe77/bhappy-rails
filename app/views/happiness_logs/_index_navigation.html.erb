@@ -1,0 +1,72 @@
+<div class="media">
+  <span class="twitter">
+    <a href="https://twitter.com/dgreenbe77" class="twitter-follow-button" data-show-count="true">Follow @dgreenbe77</a>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://bhappy.herokuapp.com" data-text="Bhappy">Tweet</a>
+  </span>
+  <div class="fb-like" data-href="http://bhappy.herokuapp.com" data-send="false" data-layout="button_count" data-show-faces="false"></div>
+  <div class='fb-login'>
+    <%= link_to image_tag("/images/fb_login.png"), user_omniauth_authorize_path(:facebook) %>
+  </div>
+</div>
+
+<img src="/images/cloud1.png" class="cloud_login_right">
+<div class="login_logout_right">
+  <% if user_signed_in? %>
+    <span class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></span>
+  <% else %>
+    <span class="active"><%= link_to "Sign In", new_user_session_path %></span>
+  <%end%>
+</div>
+
+<div class="logs">
+  <%= link_to "Happiness Logs", logs_happiness_logs_path %>
+</div>
+
+<div class="logo_cloud">
+  <img src="/images/cloud1.png">
+  <h1 class="whole_logo"><a href="/"><img src="/images/smiley.png" class="logo">BHappy</a></h1>
+</div>
+
+<div class="birds" >
+  <img src="/images/smileybird.png" class="bird1" id="smileybird1">
+  <img src="/images/smileybird1.png" class="bird2" id="smileybird2">
+  <img src="/images/smileybird2.png" class="bird3" id="smileybird3">
+</div>
+
+<div class="large-4 medium-4 columns" id="smiley">
+  <h1 class="eye1">.</h1>
+  <h1 class="eye2">.</h1>
+  <h1 class="mouth">)</h1>
+  <div class="circle"></div>
+</div>
+
+<div class="large-3 medium-3 columns">
+  <img src="/images/cloud1.png" class="cloud1">
+  <img src="/images/cloud1.png" data-stellar-ratio=".9"  class="cloud6">
+  <img src="/images/cloud1.png" data-stellar-ratio="1"  class="cloud3">
+  <img src="/images/cloud1.png" data-stellar-ratio="1.1"  class="cloud4">
+  <img src="/images/cloud1.png" data-stellar-ratio="1.8"  class="cloud5">
+  <img src="/images/cloud1.png" data-stellar-ratio="1.6"  class="cloud7">
+  <img src="/images/cloud_cluster3.png" data-stellar-ratio="1.2"  class="cloud_cluster1">
+  <img src="/images/cloud1.png" data-stellar-ratio="1.4"  class="cloud_cluster2">
+</div>
+
+<div class="search">
+  <img src="/images/cloud1.png" class="cloud_search2">
+  <span class="has-form search_bar2">
+    <%= form_tag(search_happiness_logs_path, method: :get, class: 'large-3 small-3 columns') do %>
+      <div class="row collapse">
+        <div class="large-8 small-8 columns">
+           <%= text_field_tag 'Query', nil, class: '' %>
+        </div>
+        <div class="large-4 small-4 columns">
+          <%= submit_tag 'Search', class: 'alert button small round expand' %>
+        </div>
+      </div>
+    <% end %>
+  </span>
+</div>
+
+<div>
+  <%= link_to "Find Happiness", new_happiness_log_path, class: "happy large round button"%>
+</div>

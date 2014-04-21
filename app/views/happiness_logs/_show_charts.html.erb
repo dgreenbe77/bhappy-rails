@@ -1,0 +1,31 @@
+<img src="/images/cloud1.png" class="show_cloud_chart2">
+<p class="show_cloud_chart1_text">Personal Happiness Timeline</p>
+
+<div class="show_chart1" id='chart_div' style='width: 700px; height: 700px;'></div>
+
+<div class="show_chart2" id="map_div" style="width: 700px; height: 700;"></div>
+
+<img src="/images/cloud1.png" class="show_cloud_chart1">
+<p class="show_cloud_chart2_text">Personal Happiness Map</p>
+
+<div class="show_chart2_buttons">
+  <%= simple_form_for(@location) do |r| %>
+    <%= r.select(:region, IsoCountryCodes.for_select) %>
+    <%= r.submit "Change Location" %>
+  <% end %>
+
+  <%= simple_form_for(@location) do |r| %>
+    <%= r.hidden_field :region, value: "world" %>
+    <%= r.submit "See World" %>
+  <% end %>
+</div>
+
+<div class="show_scales">
+  <img src="/images/scale.png" class="show_scale1">
+  <img src="/images/scale.png" class="show_scale2">
+</div>
+
+<img src="/images/cloud1.png" class="show_cloud_chart3">
+<p class="show_cloud_chart3_text">Factors Mentioned</p>
+
+<div class="show_chart3" id="donutchart" style="width: 700; height: 700px;"></div>

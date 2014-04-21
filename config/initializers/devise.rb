@@ -7,6 +7,7 @@ Devise.setup do |config|
   config.secret_key = ENV['devise_secret_key']
   
   config.omniauth :facebook, ENV['facebook_id'], ENV['facebook_secret']
+  config.omniauth :twitter, ENV["twitter_key"], ENV["twitter_secret"]
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
