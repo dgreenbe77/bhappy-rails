@@ -15,7 +15,10 @@ class WordAnalysis
     bigrams = File.readlines(bigram_file).map(&:strip)
     value = 0
     main_post_words = @happiness_log.main_post.gsub(/[^a-z '-+]/i, '').split(' ')
+    @happiness_log[category] = count_words(main_post_words, value, unigrams, bigrams)
+  end
 
+  def count_words(main_post_words, value, unigrams, bigrams)
     main_post_words.each do |word| 
       if unigrams.include?(word.downcase)
          value += 1 
@@ -29,8 +32,7 @@ class WordAnalysis
         end
       end
     end
-
-    @happiness_log[category] = value
+    return value
   end
 
   def convert_scale_by_deviation(category)
@@ -49,7 +51,10 @@ class WordAnalysis
     variance = squared_sum / count
     standard_deviation = Math.sqrt(variance)
     average = sum / count
+    scale(category, average, standard_deviation)
+  end
 
+  def scale(category, average, standard_deviation)
     case
     when average == 0
       5

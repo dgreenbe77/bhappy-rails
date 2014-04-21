@@ -68,6 +68,7 @@ class HappinessLogsController < ApplicationController
   end
 
   def update
+    @happiness_log.update(happiness_log_params)
     happiness_log_analysis
 
     respond_to do |format|
