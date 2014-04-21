@@ -13,7 +13,7 @@ So the page doesn't have to load too much happiness logs at a time and isn't ove
     sign_in_as(@user)
     FactoryGirl.create(:happiness_log, main_post: "Comercialization makes me a sad sad panda", user: @user)
     FactoryGirl.create_list(:happiness_log, 4, user: @user)
-    visit '/logs'
+    visit '/happy/logs'
   end
 
   context 'pagination' do
@@ -21,7 +21,7 @@ So the page doesn't have to load too much happiness logs at a time and isn't ove
     it 'only displays 5 posts postings a page' do
       expect(page).to have_content("Comercialization makes me a sad sad panda")
       FactoryGirl.create(:happiness_log, user: @user)
-      visit '/logs'
+      visit '/happy/logs'
       expect(page).to_not have_content("Comercialization makes me a sad sad panda")
     end
 

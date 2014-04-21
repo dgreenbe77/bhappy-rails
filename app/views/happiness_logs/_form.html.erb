@@ -1,16 +1,7 @@
 <div class="scroll_container">
-  <%= form_for(@happiness_log) do |f| %>
+  <p class="notice"><%= notice %></p>
 
-    <% if @happiness_log.errors.any? %>
-      <div id="error_explanation">
-        <h3><%= pluralize(@happiness_log.errors.count, "error") %> Invalid Post:</h3>
-        <ul>
-        <% @happiness_log.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <%= form_for(@happiness_log) do |f| %>
 
     <div>
       <%= f.label :image, "Take or Upload Your Image for Facial Analysis:" %>

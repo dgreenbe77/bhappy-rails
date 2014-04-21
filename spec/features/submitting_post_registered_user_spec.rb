@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 feature 'registered user filling out form', %q{
-
-  }do
+As a registered user,
+I want to fill out happiness logs,
+so I can track my happiness }do
 # AC:
 # I must fill out a main post
 # I must fill out a location
@@ -35,10 +36,8 @@ feature 'registered user filling out form', %q{
       fill_in 'happiness_log[title]', with: ''
       click_on 'Find Happiness'
 
-      expect(page).to have_content("Main post can't be blank")
-      expect(page).to have_content("Address can't be blank")
-      expect(page).to have_content("Title can't be blank")      
-      expect(page).to have_content("Happy Post")
+      expect(page).to have_content("Field(s) Left Blank or Invalid")  
+      expect(page).to have_content("Happiness Log")
     end
 
   end

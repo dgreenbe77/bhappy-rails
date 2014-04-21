@@ -78,7 +78,7 @@ class HappinessLogsController < ApplicationController
         format.html { redirect_to @happiness_log }
         format.json { render action: 'show', status: :created, location: @happiness_log }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to new_happiness_log_path, notice: "Field(s) Left Blank or Invalid"}
         format.json { render json: @happiness_log.errors, status: :unprocessable_entity }
       end
     end

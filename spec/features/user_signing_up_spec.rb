@@ -15,11 +15,10 @@ feature 'viewer signing up', %q{
 
   before(:each) do
     @user = FactoryGirl.build(:user)
+    visit new_user_registration_path
   end
 
     it 'allows you to sign up when you give valid entries' do
-      visit '/'
-      click_on 'Sign Up'
       fill_in "Email", with: @user.email
       fill_in "Password", with: @user.password
       fill_in "Password confirmation", with: @user.password
@@ -33,7 +32,6 @@ feature 'viewer signing up', %q{
 
 
     it "gives you an error message when you don't give it an email" do
-      visit new_user_registration_path
       fill_in "Email", with: ""
       fill_in "Password", with: @user.password
       fill_in "Password confirmation", with: @user.password
@@ -48,7 +46,6 @@ feature 'viewer signing up', %q{
     end
 
     it "gives you an error message when you don't give it an password" do
-      visit new_user_registration_path
       fill_in "Email", with: @user.email
       fill_in "Password", with: ""
       fill_in "Password confirmation", with: ""
