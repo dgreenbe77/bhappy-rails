@@ -7,6 +7,24 @@
     left: 50%;
 }
 
+.demographics {
+    top: 107%;
+    position: absolute;
+    left: 5%;
+    width: 100px;
+    min-width: 100px;
+    z-index: 20;
+}
+
+.demographics_cloud {
+    top: 101%;
+    position: absolute;
+    left: 1%;
+    z-index: 19;
+    height: 235px;
+    width: 180px;
+}
+
 .logo_bird {
     position: absolute;
     left: 10px;

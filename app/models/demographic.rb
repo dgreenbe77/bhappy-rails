@@ -8,9 +8,9 @@ class Demographic
       age_range1_avg = age_range1.reduce(:+) / age_range1.count
       age_range2_avg = age_range2.reduce(:+) / age_range2.count
       if age_range1_avg > age_range2_avg
-        return "People Between Ages #{min} and #{max} are Happier \n than People Between Ages #{min2} and #{max2}"
+        return "People Between Ages #{min} and #{max} are Happier \n than People Between Ages #{min2} and #{max2}."
       else
-        return "People Between Ages #{min2} and #{max2} are Happier \n than People Between Ages #{min} and #{max}"
+        return "People Between Ages #{min2} and #{max2} are Happier \n than People Between Ages #{min} and #{max}."
       end
     end
   end
@@ -23,9 +23,9 @@ class Demographic
       male_avg = male.reduce(:+) / male.count
       female_avg = female.reduce(:+) / female.count
       if male_avg > female_avg
-        return "Males are Happier than Females"
+        return "Males are Happier than Females."
       else
-        return "Females are Happier than Males"
+        return "Females are Happier than Males."
       end
     end
   end
@@ -38,7 +38,7 @@ class Demographic
       smiling_avg = smiling.reduce(:+) / smiling.count
       frowning_avg = frowning.reduce(:+) / frowning.count
       if smiling_avg > frowning_avg
-        return "People who Smile are Happier than Those Who Frown"
+        return "People who Smile are Happier than Those Who Frown."
       else
         return "People who Frown are Happier than Those Who Smile, Who Would Have Thunk It!"
       end

@@ -4,8 +4,64 @@
 
 <%= render 'happiness_logs/index_charts' %>
 
-<script type='text/javascript' src= 'jsapi'></script>
-<script type='text/javascript'>
+<%= render 'happiness_logs/demographics' %>
+
+<script type="text/javascript">
+  var currentPos = 0;
+  var bird1 = document.getElementById("smileybird1");
+  var bird2 = document.getElementById("smileybird2");
+  var bird3 = document.getElementById("smileybird3");  
+  var bodWidth = screen.availWidth;
+  var birdPos = -215;
+
+  function move() {
+    if (currentPos < (bodWidth + 500)) {
+      currentPos = parseInt(bird1.style.right ?
+                   bird1.style.right : birdPos) + 10;
+      bird1.style.right = currentPos + "px";
+      setTimeout("move()", 30);
+    }
+    if (currentPos < (bodWidth + 500)) {
+      currentPos = parseInt(bird2.style.right ?
+                   bird2.style.right : birdPos) + 8;
+      bird2.style.right = currentPos + "px";
+    }
+    if (currentPos < (bodWidth + 500)) {
+      currentPos = parseInt(bird3.style.right ?
+                   bird3.style.right : birdPos) + 8;
+      bird3.style.right = currentPos + "px";
+    }
+  }
+
+  move();
+</script>
+
+<script type="text/javascript">
+google.load('visualization', '1', {'packages': ['geochart']});
+google.setOnLoadCallback(drawMarkersMap);
+
+function drawMarkersMap() {
+var happiness_logs = gon.happiness_logs;
+var data = google.visualization.arrayToDataTable([['Location']]);
+data.addColumn('number', 'Happy Scale');   
+
+happiness_logs.forEach( function (arrayItem) {
+   data.addRows([
+     [arrayItem['address'], arrayItem['happy_scale']]
+   ]);
+});
+
+var options = {
+  region: gon.region,
+  displayMode: 'markers',
+  colorAxis: {colors: ['blue', 'red']}
+};
+
+var chart = new google.visualization.GeoChart(document.getElementById('world_map_div'));
+chart.draw(data, options);
+};
+
+
 google.load('visualization', '1', {'packages':['annotatedtimeline']});
 google.setOnLoadCallback(drawChart);
 function drawChart() {
@@ -32,78 +88,8 @@ function drawChart() {
     thickness: 3,
   };
 
-  var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
+  var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('world_chart_div'));
 
   chart.draw(data, options);
 }
-</script>
-
-<script type="text/javascript">
-  google.load('visualization', '1', {'packages': ['geochart']});
-  google.setOnLoadCallback(drawMarkersMap);
-
-  function drawMarkersMap() {
-  var happiness_logs = gon.happiness_logs;
-  var data = google.visualization.arrayToDataTable([['Location']]);
-  data.addColumn('number', 'Happy Scale');   
-
-  happiness_logs.forEach( function (arrayItem) {
-     data.addRows([
-       [arrayItem['address'], arrayItem['happy_scale']]
-     ]);
-  });
-
-  var options = {
-    region: gon.region,
-    displayMode: 'markers',
-    colorAxis: {colors: ['blue', 'red']}
-  };
-
-  var chart = new google.visualization.GeoChart(document.getElementById('map_div'));
-  chart.draw(data, options);
-  };
-</script>
-
-<%= javascript_include_tag "social_media" %>
-
-<script>
-  var currentPos = 0;
-  var bird1 = document.getElementById("smileybird1");
-  var bird2 = document.getElementById("smileybird2");
-  var bird3 = document.getElementById("smileybird3");  
-  var bodWidth = screen.availWidth;
-  var birdPos = -215;
-
-  function move() {
-    if (currentPos < (bodWidth + 500)) {
-      currentPos = parseInt(bird1.style.right ?
-                   bird1.style.right : birdPos) + 10;
-      bird1.style.right = currentPos + "px";
-      setTimeout("move()", 30);
-    }
-    if (currentPos < (bodWidth + 500)) {
-      currentPos = parseInt(bird2.style.right ?
-                   bird2.style.right : birdPos) + 8;
-      bird2.style.right = currentPos + "px";
-    }
-    if (currentPos < (bodWidth + 500)) {
-      currentPos = parseInt(bird3.style.right ?
-                   bird3.style.right : birdPos) + 8;
-      bird3.style.right = currentPos + "px";
-    }
-  }
-  
-  move();
-</script>
-
-<script>
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220656758000337";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
 </script>

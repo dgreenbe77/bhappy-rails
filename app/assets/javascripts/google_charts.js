@@ -1,39 +1,60 @@
-<% content_for(:navbar) do %>
-  <section class="navbar"></section>
-<% end %>
+google.load('visualization', '1', {'packages': ['geochart']});
+google.setOnLoadCallback(drawMarkersMap);
 
-<img src="/images/cloud1.png" class="cloud_title">
-<h1 align="center" class="show_cloud_title_text"> Post Data: </h1>
+function drawMarkersMap() {
+var happiness_logs = gon.happiness_logs;
+var data = google.visualization.arrayToDataTable([['Location']]);
+data.addColumn('number', 'Happy Scale');   
 
-<%= render 'show_charts' %>
+happiness_logs.forEach( function (arrayItem) {
+   data.addRows([
+     [arrayItem['address'], arrayItem['happy_scale']]
+   ]);
+});
 
-<div class="scroll_container2">
-  <% unless @happiness_log.image == "Add Image" || @happiness_log.image.blank? %>
-    <%= filepicker_image_tag @happiness_log.image, w: 400, h: 400, fit: 'clip', class: 'center' %>
-    <%= filepicker_save_button "Save", @happiness_log.image, "image/jpg" %>
-  <% end %>
+var options = {
+  region: gon.region,
+  displayMode: 'markers',
+  colorAxis: {colors: ['blue', 'red']}
+};
 
-  <p>
-    <strong>Main Post:</strong>
-    <%= @happiness_log.main_post %>
-  </p>
+var chart = new google.visualization.GeoChart(document.getElementById('world_map_div'));
+chart.draw(data, options);
+};
 
-  <p>
-    <strong>Happy:</strong>
-    <%= @happiness_log.happy_scale %>
-  </p>
 
-  <p>
-    <strong>Smile:</strong>
-    <%= @happiness_log.smile %>
-  </p>
+google.load('visualization', '1', {'packages':['annotatedtimeline']});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('datetime', 'Date');
+  data.addColumn('number', 'Happiness');
 
-  <%= link_to 'Edit', edit_happiness_log_path(@happiness_log) %> |
-  <%= link_to 'Back', happiness_logs_path %>
-</div>
+  var date = gon.date;
+  var happiness_log = gon.happiness_logs;
+  happiness_log.forEach( function (arrayItem) {
+    for (var i in date) {
+      data.addRows([
+       [new Date(Date.parse(date[i])), arrayItem['happy_scale']]
+       ]);
+    }
+  });
 
-<script type='text/javascript' src='jsapi'></script>
-<script type='text/javascript'>
+  var options = {
+    colors: ['#e0440e'],
+    displayAnnotations: true,
+    max: 10,
+    wmode: 'opaque',
+    fill: 50,
+    thickness: 3,
+  };
+
+  var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('world_chart_div'));
+
+  chart.draw(data, options);
+}
+
+
   google.load('visualization', '1', {'packages':['annotatedtimeline']});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
@@ -67,10 +88,9 @@
 
     chart.draw(data, options);
   }
-</script>
 
-<script type="text/javascript">
-  google.load('visualization', '1', {'packages': ['geochart']});
+
+    google.load('visualization', '1', {'packages': ['geochart']});
   google.setOnLoadCallback(drawMarkersMap);
 
   function drawMarkersMap() {
@@ -93,10 +113,9 @@
   var chart = new google.visualization.GeoChart(document.getElementById('map_div'));
   chart.draw(data, options);
   };
-</script>
 
-<script type="text/javascript">
-  google.load("visualization", "1", {packages:["corechart"]});
+
+    google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
     var data = google.visualization.arrayToDataTable(
@@ -126,4 +145,4 @@
     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
     chart.draw(data, options);
   }
-</script>
+
