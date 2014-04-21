@@ -75,24 +75,8 @@ class User < ActiveRecord::Base
         user.work = auth.extra.raw_info.work
         graph = Koala::Facebook::API.new(user.oauth_token)
         fql = graph.fql_query("SELECT pic_big, friend_count, activities, affiliations, birthday, books, current_address, current_location, education, interests, languages, movies, music, political, profile_blurb, quotes, religion, sports, tv FROM user WHERE uid = me()")
-        user.friend_count = fql[0]['friend_count'] 
-        user.activities = fql[0]['activities'] 
-        user.affiliations = fql[0]['affiliations'] 
-        user.birthday = fql[0]['birthday'] 
-        user.books = fql[0]['books'] 
-        user.current_address = fql[0]['current_address'] 
-        user.current_location = fql[0]['current_location'] 
-        user.education = fql[0]['education'] 
-        user.interests = fql[0]['interests'] 
-        user.languages = fql[0]['languages'] 
-        user.movies = fql[0]['movies'] 
-        user.music = fql[0]['music'] 
-        user.political = fql[0]['political'] 
-        user.profile_blurb = fql[0]['profile_blurb'] 
-        user.quotes = fql[0]['quotes'] 
-        user.religion = fql[0]['religion'] 
-        user.sports = fql[0]['sports'] 
-        user.tv = fql[0]['tv'] 
+        ['friend_count', 'activities', 'affiliations', 'birthday', 'books', 'current_address', 'current_location', 'education', 'interests', 
+         'languages', 'movies', 'music', 'political', 'profile_blurb', 'quotes', 'religion', 'sports', 'tv'].each {|category| user[category] = fql[0][category]} 
         make_facebook_happiness_log(user, graph, fql)
         user.save!
       end
