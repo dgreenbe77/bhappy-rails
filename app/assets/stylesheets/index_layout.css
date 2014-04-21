@@ -133,6 +133,12 @@
     position: relative;
 }
 
+.twitter-login {
+    left: 550px;
+    top: 6.5px;
+    position: fixed;
+}
+
 .fb-like {
     top: 2px;
     position: fixed;
@@ -143,6 +149,7 @@
     top: 6px;
     position: fixed;
 }
+
 
 .eye1 {
     left: 250px;

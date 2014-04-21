@@ -51,6 +51,44 @@
     margin-left: -200px;    
 }
 
+.right_scroll {
+    width: 42%;
+    height: 65%;
+    min-width: 40%;
+    min-height: 75%;
+    background: white;
+    overflow: scroll;
+    border:5px solid gray;
+    border-radius: 5px 20px 5px;
+    background: #EBF5F7;
+    position: fixed;
+    top: 7%;
+    left: 54%;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;  
+}
+
+.fb_logo{
+    top: 50%;
+    position: fixed;
+    left: 5%;
+    font-style: italic;
+    font-family: "Courier New";
+    font-size: 13px;
+    text-align: center;
+}
+
+.twitter_logo{
+    top: 10%;
+    position: fixed;
+    left: 5%;
+    font-style: italic;
+    font-family: "Courier New";
+    font-size: 13px;
+    text-align: center;
+}
+
 .text {
     padding-top: 1px;
     padding-left: 20px;

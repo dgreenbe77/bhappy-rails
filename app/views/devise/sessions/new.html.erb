@@ -1,9 +1,16 @@
-<div class='fb-sign-in'>
+<div class='fb_logo'>
+  <p>Login with Facebook</p>
+  <p>To Get Profile Picture Analyzed</p>
   <%= link_to image_tag("/images/facebook_logo.png"), user_omniauth_authorize_path(:facebook) %>
 </div>
-<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
 
-<div class='left_scroll'>
+<div class='twitter_logo'>
+  <p>Login with Twitter</p>
+  <p>to get recent Posts Analyzed:</p>
+  <%= link_to image_tag("/images/twitter_logo.png"), user_omniauth_authorize_path(:twitter) %>
+</div>
+
+<div class='right_scroll'>
   <h2>Sign in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

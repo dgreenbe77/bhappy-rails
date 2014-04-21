@@ -7,6 +7,9 @@
   <div class='fb-login'>
     <%= link_to image_tag("/images/fb_login.png"), user_omniauth_authorize_path(:facebook) %>
   </div>
+  <div class='twitter-login'>
+    <%= link_to image_tag("/images/twitter_login.png"), user_omniauth_authorize_path(:twitter) %>
+  </div>
 </div>
 
 <img src="/images/cloud1.png" class="cloud_login_right">
@@ -18,7 +21,7 @@
   <%end%>
 </div>
 
-<div class="logs">
+<div class="logs" data-stellar-ratio="1.6">
   <%= link_to "Happiness Logs", logs_happiness_logs_path %>
 </div>
 

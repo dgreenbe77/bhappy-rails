@@ -4,9 +4,8 @@
 
 <img src="/images/cloud1.png" class="cloud_title">
 <h1 align="center" class="show_cloud_title_text"> Post Data: </h1>
-<br><br><br><br>
-<%= Demographic.compare_age_ranges(5, 25, 15, 65) %> 
-<h5>  Add Posts to See More Accurate Data </h5>
+<br><br><br><br><br><br>
+<h5> Create More Posts to See More Accurate Data </h5>
 
 <%= render 'show_charts' %>
 
@@ -112,7 +111,7 @@
   google.setOnLoadCallback(drawChart);
   function drawChart() {
     var data = google.visualization.arrayToDataTable(
-      [['Factors Mentioned (Scaled From 1-10)']]);
+      [['On a 0-10 scale, with 5 being your average mentions of the subject']]);
     data.addColumn('number', 'Scale')
     
     var happiness_log = gon.current_happiness_log
@@ -131,7 +130,7 @@
     ]);
 
     var options = {
-      title: 'Factors Mentioned',
+      title: 'On a 0-10 scale, with 5 being your average mentions of the subject',
       pieHole: 0.4,
     };
 
