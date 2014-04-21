@@ -17,9 +17,9 @@
     <p><%= "#{@happiness_logs.count} result(s) found." %></p>
 
     <% @happiness_logs.each do |happiness_log| %>
-        <p><%= happiness_log.title %></p>
-        <p><%= happiness_log.main_post %></p>
-        <p><%= happiness_log.address %></p>
+        <p>Title: <br> <%= happiness_log.title %></p>
+        <p>Post: <br> <%= happiness_log.main_post %></p>
+        <p>Address: <br> <%= happiness_log.address %></p>
         <span><%= link_to "happiness_log", happiness_log_path(happiness_log) %></span> |     
         <span><%= link_to "Edit", edit_happiness_log_path(happiness_log) %></span> | 
         <span><%= link_to "Delete", happiness_log_path(happiness_log), method: :delete %></span>
