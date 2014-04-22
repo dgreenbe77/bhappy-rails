@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 feature 'authenticated user signing out', %q{
-    As a signed in user
-    I want to be able to sign out
-    So I can safely end my session} do
+As a signed in user
+I want to be able to sign out
+So I can safely end my session} do
 # AC:
 # The website has a sign out button and confirms successful sign out when clicked
 

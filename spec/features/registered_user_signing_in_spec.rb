@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 feature 'user trying to sign in', %q{
-  As a registered user
-  I can sign in when I navigate to the site
-  So I can use the cool features
-  } do
+As a registered user
+I can sign in when I navigate to the site
+So I can use the cool features
+} do
 
-  # AC:
-  # I have to enter in a email
-  # I have to enter in a password
-  # When I am not signed up I can't visit certain pages
-  # The website redirects me back to the sign up page if I mess up
-  # The website has a sign in button
+# AC:
+# I have to enter in a email
+# I have to enter in a password
+# When I am not signed up I can't visit certain pages
+# The website redirects me back to the sign up page if I mess up
+# The website has a sign in button
 
   before(:each) do
     @user = FactoryGirl.create(:user)

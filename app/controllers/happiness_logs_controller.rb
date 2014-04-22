@@ -76,7 +76,7 @@ class HappinessLogsController < ApplicationController
         format.html { redirect_to @happiness_log }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { redirect_to edit_happiness_log_path, notice: "Field(s) Left Blank or Invalid" }
         format.json { render json: @happiness_log.errors, status: :unprocessable_entity }
       end
     end
@@ -85,7 +85,7 @@ class HappinessLogsController < ApplicationController
   def destroy
     @happiness_log.destroy
     respond_to do |format|
-      format.html { redirect_to happiness_logs_url }
+      format.html { redirect_to happiness_logs_url}
       format.json { head :no_content }
     end
   end
