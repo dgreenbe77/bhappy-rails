@@ -1,6 +1,6 @@
 .chart1 {
     position: absolute;
-    top: 1000px;
+    top: 140%;
     left: 150px;
     z-index: 12;
     min-height: 70%;
@@ -47,7 +47,7 @@
 
 .chart2 {
     position: absolute;
-    top: 1720px;
+    top: 250%;
     left: 150px;
     z-index: 12;
     min-height: 70%;
