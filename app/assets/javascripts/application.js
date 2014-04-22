@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jsapi
-//= require google_charts
+//= require googlecharts
 //= require_tree .
