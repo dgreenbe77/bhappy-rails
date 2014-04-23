@@ -3,10 +3,8 @@
     top: 190px;
     left: 150px;
     z-index: 12;
-    min-height: 70%;
-    min-width: 70%;
-    width: 70%;
-    height: 70%;
+    width: 760px; 
+    height: 470px;
 }
 
 .chart1_buttons {
@@ -142,22 +140,31 @@
     margin-left: -100px;     
 }
 
+.show_scale1 {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    z-index: 12;
+    height: 85%;
+    width: 8%;
+}
+
 .show_chart2 {
     position: absolute;
     z-index: 12;
     min-height: 70%;
     min-width: 70%;
-    width: 75%;
+    width: 70%;
     height: 70%;
-    top: 205%;
-    left: 23%;
+    top: 165%;
+    left: 26%;
     margin-top: -30px;
     margin-left: -100px;
 }
 
 .show_chart2_buttons {
     position: absolute;
-    top: 275%;
+    top: 235%;
     left: 26%;
     margin-top: -30px;
     margin-left: -100px;
@@ -175,7 +182,7 @@
     min-width: 30%;
     width: 30%;
     height: 30%;
-    top: 169%;
+    top: 132%;
     left: 40%;
     margin-top: -30px;
     margin-left: -100px;    
@@ -191,10 +198,19 @@
     min-width: 25%;
     width: 25%;
     height: 25%;
-    top: 182%;
+    top: 145%;
     left: 44%;
     margin-top: -30px;
     margin-left: -100px;     
+}
+
+.show_scale2 {
+    position: absolute;
+    top: 160%;
+    left: 0;
+    z-index: 12;
+    height: 75%;
+    width: 8%;
 }
 
 .show_chart3 {
@@ -204,7 +220,7 @@
     min-width: 70%;
     width: 75%;
     height: 70%;
-    top: 315%;
+    top: 275%;
     left: 23%;
     margin-top: -30px;
     margin-left: -100px;
@@ -217,7 +233,7 @@
     min-width: 30%;
     width: 30%;
     height: 27%;
-    top: 286%;
+    top: 246%;
     left: 40%;
     margin-top: -30px;
     margin-left: -100px;    
@@ -233,28 +249,10 @@
     min-width: 25%;
     width: 25%;
     height: 25%;
-    top: 297%;
+    top: 257%;
     left: 44%;
     margin-top: -30px;
     margin-left: -100px;     
-}
-
-.show_scale1 {
-    position: absolute;
-    top: 55%;
-    left: 0;
-    z-index: 12;
-    height: 85%;
-    width: 8%;
-}
-
-.show_scale2 {
-    position: absolute;
-    top: 200%;
-    left: 0;
-    z-index: 12;
-    height: 75%;
-    width: 8%;
 }
 
 .demographics {
