@@ -15,18 +15,18 @@
 require_layout
 .chart1 {
     position: absolute;
-    top: 140%;
-    left: 150px;
     z-index: 12;
     min-height: 70%;
     min-width: 70%;
     width: 70%;
     height: 70%;
+    margin-top: 190px;
+    margin-left: 150px;
 }
 
 .chart1_buttons {
     position: absolute;
-    top: 1466px;
+    top: 660px;
     left: 150px;
     z-index: 12;
     min-height: 70%;
@@ -37,7 +37,7 @@ require_layout
 
 .cloud_chart1 {
     position: absolute;
-    top: 750px;
+    top: 0px;
     left: 380px;
     z-index: 12;
     min-height: 28%;
@@ -48,7 +48,7 @@ require_layout
 
 .cloud_chart1_text {
     position: absolute;
-    top: 810px;
+    top: 55px;
     left: 455px;
     font-style: italic;
     font-family: "Courier New";
@@ -60,20 +60,30 @@ require_layout
     height: 20%;    
 }
 
+
+.scale1 {
+    position: absolute;
+    top: 190px;
+    left: 25px;
+    z-index: 12;
+    height: 450px;
+    width: 100px;
+}
+
 .chart2 {
     position: absolute;
-    top: 250%;
-    left: 150px;
+    top: 970px;
+    left: 180px;
     z-index: 12;
-    min-height: 70%;
-    min-width: 70%;
-    width: 70%;
-    height: 70%;
+    min-height: 60%;
+    min-width: 60%;
+    width: 60%;
+    height: 60%;
 }
 
 .cloud_chart2 {
     position: absolute;
-    top: 1515px;
+    top: 745px;
     left: 360px;
     z-index: 12;
     min-width: 33%;
@@ -84,7 +94,7 @@ require_layout
 
 .cloud_chart2_text {
     position: absolute;
-    top: 1570px;
+    top: 790px;
     left: 430px;
     font-style: italic;
     font-family: "Courier New";
@@ -96,18 +106,9 @@ require_layout
     height: 20%;    
 }
 
-.scale1 {
-    position: absolute;
-    top: 980px;
-    left: 25px;
-    z-index: 12;
-    height: 450px;
-    width: 100px;
-}
-
 .scale2 {
     position: absolute;
-    top: 1770px;
+    top: 975px;
     left: 25px;
     z-index: 12;
     height: 550px;
@@ -205,7 +206,7 @@ require_layout
     min-width: 25%;
     width: 25%;
     height: 25%;
-    top: 179%;
+    top: 182%;
     left: 44%;
     margin-top: -30px;
     margin-left: -100px;     
@@ -269,6 +270,24 @@ require_layout
     z-index: 12;
     height: 75%;
     width: 8%;
+}
+
+.demographics {
+    top: 132%;
+    position: fixed;
+    left: 5%;
+    width: 100px;
+    min-width: 100px;
+    z-index: 20;
+}
+
+.demographics_cloud {
+    top: 125%;
+    position: fixed;
+    left: 1%;
+    z-index: 19;
+    height: 235px;
+    width: 180px;
 }
 .scroll_container {
     width: 80%;
@@ -6606,37 +6625,6 @@ th.hide-for-touch {
     left: 50%;
 }
 
-.demographics {
-    top: 107%;
-    position: absolute;
-    left: 5%;
-    width: 100px;
-    min-width: 100px;
-    z-index: 20;
-}
-
-.demographics_cloud {
-    top: 101%;
-    position: absolute;
-    left: 1%;
-    z-index: 19;
-    height: 235px;
-    width: 180px;
-}
-
-.logo_bird {
-    position: absolute;
-    left: 10px;
-    top: -20px;
-}
-
-.logo_text {
-    position: absolute;
-    left: 17px;
-    font-size: 13px;
-    top: 67px;
-    font-style: italic;
-}
 
 .posts {
     position: fixed;
@@ -6694,16 +6682,9 @@ th.hide-for-touch {
 .cloud_cluster1 {
     position: fixed;
     right: 10px;
-    width: 10%;
+    width: 90px;
     height: 10%;
-    left: 1170px
-}
-
-.cloud_cluster2 {
-    position: fixed;
-    left: 1300px;
-    width: 200px;
-    height: 100px;
+    left: 890px
 }
 
 .birds {
@@ -6950,17 +6931,32 @@ th.hide-for-touch {
   z-index: 10;
 }
 
+
+.logo_bird {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+.logo_text {
+    position: absolute;
+    left: 17px;
+    font-size: 13px;
+    top: 67px;
+    font-style: italic;
+}
+
 .login_logout {
-    left: 14.5%;
-    top: 15px;
+    left: 145px;
+    top: 26px;
     position: absolute;
 }
 
 .cloud_login{
-    left: 3%;
+    left: 130px;
     position: absolute;
     height: 70px;
-    top: -8px;
+    top: 3px;
 }
 
 .login_logout_right {
@@ -6978,41 +6974,34 @@ th.hide-for-touch {
 }
 
 .logs {
-    left: 690px;
-    top: 60px;
-    font-size: 27px;
-    position: absolute;
-    z-index: 10;
-}
-
-.cloud_logs {
+    float: right;
+    top: 535px;
     position: relative;
-    top: 400px;
-    width: 380px;
-    height: 205px;
-    left: 65%;
+    z-index: 10;
+    margin-right: 37px;
 }
 
 .cloud_search {
     position: absolute;
-    top: -3%;
+    top: 5px;
     left: 67%;
-    width: 400px;
+    width: 225px;
     height: 110px;    
 }
 
 .search_bar {
     position: absolute;
-    top: 2%;
+    top: 40px;
     left: 70%;
-    width: 1300px;
+    width: 750px;
     height: 100px;
+    z-index: 1;
 }
 
 .cloud_search2 {
     position: absolute;
     top: 20px;
-    left: 630px;
+    left: 710px;
     width: 300px;
     height: 110px;    
 }
@@ -7020,21 +7009,22 @@ th.hide-for-touch {
 .search_bar2 {
     position: absolute;
     top: 60px;
-    left: 660px;
+    left: 740px;
     width: 1000px;
     height: 100px;
+    z-index: 1;
 }
 
 .cloud_title {
     position: absolute;
-    top: -20px;
+    top: 5px;
     left: 445px;
-    z-index: -1;  
-    min-height: 20%;
+    z-index: 1;  
+    min-height: 19%;
     min-width: 25%;
     width: 29%;
-    height: 20%; 
-    top: 1%;
+    height: 19%; 
+    top: 30px;
     left: 45%;
     margin-top: -30px;
     margin-left: -100px;
@@ -7047,13 +7037,14 @@ th.hide-for-touch {
     min-height: 5%;
     min-width: 5%;
     width: 15%;
-    height: 15%;  
+    height: 14%;  
     position: absolute;
     left: 510px;
-    top: 5%;
+    top: 58px;
     left: 50%;
     margin-top: -30px;
     margin-left: -100px;
+    z-index: 1;
 }
 
 .show_cloud_title_text {
@@ -7070,6 +7061,7 @@ th.hide-for-touch {
     left: 52%;
     margin-top: -30px;
     margin-left: -100px;
+    z-index: 1;
 }
 
 
@@ -7102,6 +7094,12 @@ th.hide-for-touch {
     left: 450px;
     top: -17px;
     position: relative;
+}
+
+.world {
+    top: 75%;
+    position: fixed;
+    left: 1%;
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 
