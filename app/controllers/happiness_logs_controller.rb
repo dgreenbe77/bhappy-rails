@@ -5,16 +5,6 @@ class HappinessLogsController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
-    set_user_for_index
-    gon.happiness_logs = @happiness_logs
-    gon.date = @happiness_logs.pluck(:created_at)
-    @location = Location.new
-
-    unless @user.blank?
-      unless @user.location.blank?
-        gon.region = @user.location.region
-      end
-    end
   end
 
   def show
@@ -39,7 +29,7 @@ class HappinessLogsController < ApplicationController
 
   def search
     query = "%#{params[:Query]}%"
-    @happiness_logs = HappinessLog.where('main_post like :match or address like :match or title like :match', match: query)
+    @happiness_logs = @user.happiness_logs.where('main_post like :match or address like :match or title like :match', match: query)
   end
 
   def new
@@ -120,13 +110,4 @@ class HappinessLogsController < ApplicationController
       FacialRecognition.api(@happiness_log, analysis)
     end
 
-    def set_user_for_index
-      if params.keys.include?('email')
-        @user = User.where(email: params['email']).first
-        @happiness_logs = @user.happiness_logs
-      else
-        @user = current_user
-        @happiness_logs = HappinessLog.all
-      end
-    end
 end

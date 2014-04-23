@@ -15,7 +15,7 @@
 require_layout
 .chart1 {
     position: absolute;
-    top: 1000px;
+    top: 140%;
     left: 150px;
     z-index: 12;
     min-height: 70%;
@@ -62,7 +62,7 @@ require_layout
 
 .chart2 {
     position: absolute;
-    top: 1720px;
+    top: 250%;
     left: 150px;
     z-index: 12;
     min-height: 70%;
@@ -277,7 +277,7 @@ require_layout
     min-height: 75%;
     background: white;
     overflow: scroll;
-    border:5px solid gray;
+    border:3px solid gray;
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: fixed;
@@ -286,6 +286,7 @@ require_layout
     margin-top: -30px;
     margin-left: -100px;
     text-align: center;
+    padding: 20px;
 }
 
 .scroll_container2 {
@@ -295,7 +296,7 @@ require_layout
     min-height: 75%;
     background: white;
     overflow: scroll;
-    border:5px solid gray;
+    border:3px solid gray;
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: absolute;
@@ -304,6 +305,8 @@ require_layout
     margin-top: -30px;
     margin-left: -100px;
     margin-bottom: 40px;
+    text-align: center;
+    padding: 20px;
 }
 
 .left_scroll {
@@ -313,14 +316,52 @@ require_layout
     min-height: 75%;
     background: white;
     overflow: scroll;
-    border:5px solid gray;
+    border:3px solid gray;
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: fixed;
     top: 20%;
     left: 20%;
     margin-top: 0px;
-    margin-left: -200px;    
+    margin-left: -200px; 
+    padding: 20px;  
+}
+
+.right_scroll {
+    width: 42%;
+    height: 65%;
+    min-width: 40%;
+    min-height: 75%;
+    background: white;
+    overflow: scroll;
+    border:3px solid gray;
+    border-radius: 5px 20px 5px;
+    background: #EBF5F7;
+    position: fixed;
+    top: 7%;
+    left: 54%;
+    text-align: center;
+    padding: 20px;  
+}
+
+.fb_logo{
+    top: 50%;
+    position: fixed;
+    left: 5%;
+    font-style: italic;
+    font-family: "Courier New";
+    font-size: 13px;
+    text-align: center;
+}
+
+.twitter_logo{
+    top: 10%;
+    position: fixed;
+    left: 5%;
+    font-style: italic;
+    font-family: "Courier New";
+    font-size: 13px;
+    text-align: center;
 }
 
 .text {
@@ -6565,6 +6606,24 @@ th.hide-for-touch {
     left: 50%;
 }
 
+.demographics {
+    top: 107%;
+    position: absolute;
+    left: 5%;
+    width: 100px;
+    min-width: 100px;
+    z-index: 20;
+}
+
+.demographics_cloud {
+    top: 101%;
+    position: absolute;
+    left: 1%;
+    z-index: 19;
+    height: 235px;
+    width: 180px;
+}
+
 .logo_bird {
     position: absolute;
     left: 10px;
@@ -6632,14 +6691,6 @@ th.hide-for-touch {
     top: 50px;
 }
 
-.cloud7 {
-    position: fixed;
-    top: 10px;
-    width: 380px;
-    height: 205px;
-    left: 650px;
-}
-
 .cloud_cluster1 {
     position: fixed;
     right: 10px;
@@ -6677,34 +6728,9 @@ th.hide-for-touch {
     top: 60px;
 }
 
-.media {
-    margin-left:auto;
-    margin-right:auto;
-    top: 3px;
-    position: fixed;
-    z-index: 1;
-}
-
-.twitter {
-    top: 4px;
-    left: 10px;
-    position: relative;
-}
-
-.fb-like {
-    top: 2px;
-    position: fixed;
-}
-
-.fb-login {
-    left: 450px;
-    top: 6px;
-    position: fixed;
-}
-
 .eye1 {
-    left: 250px;
-    top: 50px;
+    left: 150px;
+    top: 20px;
     font-size: 70px;
     color: black;
     position: fixed;
@@ -6713,8 +6739,8 @@ th.hide-for-touch {
 }
 
 .eye2 {
-    left: 290px;
-    top: 50px;
+    left: 190px;
+    top: 20px;
     font-size: 70px;
     color: black;
     position: fixed;
@@ -6723,8 +6749,8 @@ th.hide-for-touch {
 }
 
 .mouth {
-    left: 270px;
-    top: 120px;
+    left: 170px;
+    top: 90px;
     font-size: 80px;
     color: black;
     position: fixed;
@@ -6763,8 +6789,8 @@ th.hide-for-touch {
     cursor: pointer;
     position: fixed;
     margin: 0 auto;
-    top: 120px;
-    left: 175px;
+    top: 90px;
+    left: 75px;
     width: 10em;
     height: 10em;
     overflow: hidden;
@@ -6903,21 +6929,20 @@ th.hide-for-touch {
 }
 .logo_cloud {
     position: fixed;
-    left: 40px;
-    top: 35px;
+    left: 100px;
+    top: 195px;
     width: 250px;
     z-index: 1;
 }
 
 .whole_logo {
   position: fixed;
-  top: 65px;
-  left: 100px;
+  top: 235px;
+  left: 150px;
   z-index: 2;
 }
 
 .logo {
-  position: fixed;
   height: 30px;
   width: 30px;
   left: 65px;
@@ -6932,32 +6957,40 @@ th.hide-for-touch {
 }
 
 .cloud_login{
-    left: 13%;
+    left: 3%;
     position: absolute;
-    height: 10%;
+    height: 70px;
     top: -8px;
 }
 
 .login_logout_right {
-    left: 219px;
-    top: 37px;
-    position: absolute;
+    left: 55px;
+    top: 85px;
+    position: fixed;
     z-index: 10;
 }
 
 .cloud_login_right {
-    left: 200px;
-    position: absolute;
-    height: 10%;
-    top: 14px;
+    left: 30px;
+    position: fixed;
+    height: 80px;
+    top: 54px;
 }
 
 .logs {
-    left: 700px;
-    top: 90px;
-    font-size: 30px;
+    left: 690px;
+    top: 60px;
+    font-size: 27px;
     position: absolute;
     z-index: 10;
+}
+
+.cloud_logs {
+    position: relative;
+    top: 400px;
+    width: 380px;
+    height: 205px;
+    left: 65%;
 }
 
 .cloud_search {
@@ -6978,16 +7011,16 @@ th.hide-for-touch {
 
 .cloud_search2 {
     position: absolute;
-    top: 10px;
-    left: 880px;
+    top: 20px;
+    left: 630px;
     width: 300px;
     height: 110px;    
 }
 
 .search_bar2 {
     position: absolute;
-    top: 50px;
-    left: 910px;
+    top: 60px;
+    left: 660px;
     width: 1000px;
     height: 100px;
 }
@@ -7037,6 +7070,38 @@ th.hide-for-touch {
     left: 52%;
     margin-top: -30px;
     margin-left: -100px;
+}
+
+
+.media {
+    margin-left:auto;
+    margin-right:auto;
+    top: 3px;
+    position: fixed;
+    z-index: 1;
+}
+
+.twitter {
+    top: 4px;
+    left: 10px;
+    position: relative;
+}
+
+.twitter-login {
+    left: 550px;
+    top: -36.5px;
+    position: relative;
+}
+
+.fb-like {
+    top: 2px;
+    position: relative;
+}
+
+.fb-login {
+    left: 450px;
+    top: -17px;
+    position: relative;
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 

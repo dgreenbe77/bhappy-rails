@@ -7,37 +7,6 @@
     left: 50%;
 }
 
-.demographics {
-    top: 107%;
-    position: absolute;
-    left: 5%;
-    width: 100px;
-    min-width: 100px;
-    z-index: 20;
-}
-
-.demographics_cloud {
-    top: 101%;
-    position: absolute;
-    left: 1%;
-    z-index: 19;
-    height: 235px;
-    width: 180px;
-}
-
-.logo_bird {
-    position: absolute;
-    left: 10px;
-    top: -20px;
-}
-
-.logo_text {
-    position: absolute;
-    left: 17px;
-    font-size: 13px;
-    top: 67px;
-    font-style: italic;
-}
 
 .posts {
     position: fixed;
@@ -92,27 +61,12 @@
     top: 50px;
 }
 
-.cloud7 {
-    position: fixed;
-    top: 10px;
-    width: 380px;
-    height: 205px;
-    left: 650px;
-}
-
 .cloud_cluster1 {
     position: fixed;
     right: 10px;
-    width: 10%;
+    width: 90px;
     height: 10%;
-    left: 1170px
-}
-
-.cloud_cluster2 {
-    position: fixed;
-    left: 1300px;
-    width: 200px;
-    height: 100px;
+    left: 890px
 }
 
 .birds {
@@ -137,41 +91,9 @@
     top: 60px;
 }
 
-.media {
-    margin-left:auto;
-    margin-right:auto;
-    top: 3px;
-    position: fixed;
-    z-index: 1;
-}
-
-.twitter {
-    top: 4px;
-    left: 10px;
-    position: relative;
-}
-
-.twitter-login {
-    left: 550px;
-    top: 6.5px;
-    position: fixed;
-}
-
-.fb-like {
-    top: 2px;
-    position: fixed;
-}
-
-.fb-login {
-    left: 450px;
-    top: 6px;
-    position: fixed;
-}
-
-
 .eye1 {
-    left: 250px;
-    top: 50px;
+    left: 150px;
+    top: 20px;
     font-size: 70px;
     color: black;
     position: fixed;
@@ -180,8 +102,8 @@
 }
 
 .eye2 {
-    left: 290px;
-    top: 50px;
+    left: 190px;
+    top: 20px;
     font-size: 70px;
     color: black;
     position: fixed;
@@ -190,8 +112,8 @@
 }
 
 .mouth {
-    left: 270px;
-    top: 120px;
+    left: 170px;
+    top: 90px;
     font-size: 80px;
     color: black;
     position: fixed;
@@ -230,8 +152,8 @@
     cursor: pointer;
     position: fixed;
     margin: 0 auto;
-    top: 120px;
-    left: 175px;
+    top: 90px;
+    left: 75px;
     width: 10em;
     height: 10em;
     overflow: hidden;

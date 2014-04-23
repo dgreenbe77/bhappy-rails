@@ -5,7 +5,7 @@
     min-height: 75%;
     background: white;
     overflow: scroll;
-    border:5px solid gray;
+    border:3px solid gray;
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: fixed;
@@ -24,7 +24,7 @@
     min-height: 75%;
     background: white;
     overflow: scroll;
-    border:5px solid gray;
+    border:3px solid gray;
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: absolute;
@@ -44,7 +44,7 @@
     min-height: 75%;
     background: white;
     overflow: scroll;
-    border:5px solid gray;
+    border:3px solid gray;
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: fixed;
@@ -62,7 +62,7 @@
     min-height: 75%;
     background: white;
     overflow: scroll;
-    border:5px solid gray;
+    border:3px solid gray;
     border-radius: 5px 20px 5px;
     background: #EBF5F7;
     position: fixed;

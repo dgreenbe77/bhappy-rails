@@ -1,6 +1,6 @@
 .chart1 {
     position: absolute;
-    top: 140%;
+    top: 190px;
     left: 150px;
     z-index: 12;
     min-height: 70%;
@@ -11,7 +11,7 @@
 
 .chart1_buttons {
     position: absolute;
-    top: 1466px;
+    top: 660px;
     left: 150px;
     z-index: 12;
     min-height: 70%;
@@ -22,7 +22,7 @@
 
 .cloud_chart1 {
     position: absolute;
-    top: 750px;
+    top: 0px;
     left: 380px;
     z-index: 12;
     min-height: 28%;
@@ -33,7 +33,7 @@
 
 .cloud_chart1_text {
     position: absolute;
-    top: 810px;
+    top: 55px;
     left: 455px;
     font-style: italic;
     font-family: "Courier New";
@@ -45,20 +45,30 @@
     height: 20%;    
 }
 
+
+.scale1 {
+    position: absolute;
+    top: 190px;
+    left: 25px;
+    z-index: 12;
+    height: 450px;
+    width: 100px;
+}
+
 .chart2 {
     position: absolute;
-    top: 250%;
-    left: 150px;
+    top: 970px;
+    left: 180px;
     z-index: 12;
-    min-height: 70%;
-    min-width: 70%;
-    width: 70%;
-    height: 70%;
+    min-height: 60%;
+    min-width: 60%;
+    width: 60%;
+    height: 60%;
 }
 
 .cloud_chart2 {
     position: absolute;
-    top: 1515px;
+    top: 745px;
     left: 360px;
     z-index: 12;
     min-width: 33%;
@@ -69,7 +79,7 @@
 
 .cloud_chart2_text {
     position: absolute;
-    top: 1570px;
+    top: 790px;
     left: 430px;
     font-style: italic;
     font-family: "Courier New";
@@ -81,18 +91,9 @@
     height: 20%;    
 }
 
-.scale1 {
-    position: absolute;
-    top: 980px;
-    left: 25px;
-    z-index: 12;
-    height: 450px;
-    width: 100px;
-}
-
 .scale2 {
     position: absolute;
-    top: 1770px;
+    top: 975px;
     left: 25px;
     z-index: 12;
     height: 550px;
@@ -190,7 +191,7 @@
     min-width: 25%;
     width: 25%;
     height: 25%;
-    top: 179%;
+    top: 182%;
     left: 44%;
     margin-top: -30px;
     margin-left: -100px;     
@@ -254,4 +255,22 @@
     z-index: 12;
     height: 75%;
     width: 8%;
+}
+
+.demographics {
+    top: 132%;
+    position: fixed;
+    left: 5%;
+    width: 100px;
+    min-width: 100px;
+    z-index: 20;
+}
+
+.demographics_cloud {
+    top: 125%;
+    position: fixed;
+    left: 1%;
+    z-index: 19;
+    height: 235px;
+    width: 180px;
 }

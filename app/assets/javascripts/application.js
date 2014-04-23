@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jsapi
 //= require googlecharts
+//= require jquery.stellar.min
 //= require_tree .

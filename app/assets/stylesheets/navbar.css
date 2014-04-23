@@ -1,20 +1,19 @@
 .logo_cloud {
     position: fixed;
-    left: 40px;
-    top: 35px;
+    left: 100px;
+    top: 195px;
     width: 250px;
     z-index: 1;
 }
 
 .whole_logo {
   position: fixed;
-  top: 65px;
-  left: 100px;
+  top: 235px;
+  left: 150px;
   z-index: 2;
 }
 
 .logo {
-  position: fixed;
   height: 30px;
   width: 30px;
   left: 65px;
@@ -22,44 +21,67 @@
   z-index: 10;
 }
 
+
+.logo_bird {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+.logo_text {
+    position: absolute;
+    left: 17px;
+    font-size: 13px;
+    top: 67px;
+    font-style: italic;
+}
+
 .login_logout {
-    left: 14.5%;
-    top: 15px;
+    left: 145px;
+    top: 26px;
     position: absolute;
 }
 
 .cloud_login{
-    left: 13%;
+    left: 130px;
     position: absolute;
     height: 70px;
-    top: -8px;
+    top: 3px;
 }
 
 .login_logout_right {
-    left: 223px;
-    top: 47px;
-    position: absolute;
+    left: 55px;
+    top: 85px;
+    position: fixed;
     z-index: 10;
 }
 
 .cloud_login_right {
-    left: 200px;
-    position: absolute;
+    left: 30px;
+    position: fixed;
     height: 80px;
-    top: 14px;
+    top: 54px;
 }
 
 .logs {
-    left: 690px;
-    top: 60px;
+    left: 69%;
+    top: 460px;
     font-size: 27px;
     position: absolute;
     z-index: 10;
 }
 
+.cloud_logs {
+    position: relative;
+    top: 370px;
+    width: 380px;
+    height: 205px;
+    left: 61%;
+}
+
 .cloud_search {
     position: absolute;
-    top: -3%;
+    top: 5px;
     left: 67%;
     width: 400px;
     height: 110px;    
@@ -67,7 +89,7 @@
 
 .search_bar {
     position: absolute;
-    top: 2%;
+    top: 40px;
     left: 70%;
     width: 1300px;
     height: 100px;
@@ -75,30 +97,30 @@
 
 .cloud_search2 {
     position: absolute;
-    top: 10px;
-    left: 880px;
+    top: 20px;
+    left: 710px;
     width: 300px;
     height: 110px;    
 }
 
 .search_bar2 {
     position: absolute;
-    top: 50px;
-    left: 910px;
+    top: 60px;
+    left: 740px;
     width: 1000px;
     height: 100px;
 }
 
 .cloud_title {
     position: absolute;
-    top: -20px;
+    top: 5px;
     left: 445px;
     z-index: -1;  
-    min-height: 20%;
+    min-height: 19%;
     min-width: 25%;
     width: 29%;
-    height: 20%; 
-    top: 1%;
+    height: 19%; 
+    top: 30px;
     left: 45%;
     margin-top: -30px;
     margin-left: -100px;
@@ -111,10 +133,10 @@
     min-height: 5%;
     min-width: 5%;
     width: 15%;
-    height: 15%;  
+    height: 14%;  
     position: absolute;
     left: 510px;
-    top: 5%;
+    top: 58px;
     left: 50%;
     margin-top: -30px;
     margin-left: -100px;
@@ -134,4 +156,42 @@
     left: 52%;
     margin-top: -30px;
     margin-left: -100px;
+}
+
+
+.media {
+    margin-left:auto;
+    margin-right:auto;
+    top: 3px;
+    position: fixed;
+    z-index: 1;
+}
+
+.twitter {
+    top: 4px;
+    left: 10px;
+    position: relative;
+}
+
+.twitter-login {
+    left: 550px;
+    top: -36.5px;
+    position: relative;
+}
+
+.fb-like {
+    top: 2px;
+    position: relative;
+}
+
+.fb-login {
+    left: 450px;
+    top: -17px;
+    position: relative;
+}
+
+.world {
+    top: 75%;
+    position: fixed;
+    left: 1%;
 }

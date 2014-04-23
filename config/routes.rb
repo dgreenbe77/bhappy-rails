@@ -8,7 +8,7 @@ Bhappy::Application.routes.draw do
   end
 
   resources :locations, only: [:create]
-  resources :world, only: [:create]
+  resources :world, only: [:create, :index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,10 +17,10 @@ Bhappy::Application.routes.draw do
   # get 'logs' => 'happiness_logs#logs'
   # get 'world' => 'happiness_logs#world'
 
-  namespace :api do
-    resources :sessions
-    resources :registrations
-  end
+  # namespace :api do
+  #   resources :sessions
+  #   resources :registrations
+  # end
 
   # match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   # match 'auth/failure', to: redirect('/'), via: [:get, :post]
