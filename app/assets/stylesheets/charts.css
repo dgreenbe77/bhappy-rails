@@ -1,12 +1,12 @@
 .chart1 {
-    position: absolute;
+    position: relative;
+    top: 190px;
+    left: 150px;
     z-index: 12;
     min-height: 70%;
     min-width: 70%;
     width: 70%;
     height: 70%;
-    margin-top: 190px;
-    margin-left: 150px;
 }
 
 .chart1_buttons {
