@@ -64,26 +64,18 @@
 }
 
 .logs {
-    left: 69%;
-    top: 460px;
-    font-size: 27px;
-    position: absolute;
-    z-index: 10;
-}
-
-.cloud_logs {
+    float: right;
+    top: 535px;
     position: relative;
-    top: 370px;
-    width: 380px;
-    height: 205px;
-    left: 61%;
+    z-index: 10;
+    margin-right: 37px;
 }
 
 .cloud_search {
     position: absolute;
     top: 5px;
     left: 67%;
-    width: 400px;
+    width: 225px;
     height: 110px;    
 }
 
@@ -91,8 +83,9 @@
     position: absolute;
     top: 40px;
     left: 70%;
-    width: 1300px;
+    width: 750px;
     height: 100px;
+    z-index: 1;
 }
 
 .cloud_search2 {
@@ -109,13 +102,14 @@
     left: 740px;
     width: 1000px;
     height: 100px;
+    z-index: 1;
 }
 
 .cloud_title {
     position: absolute;
     top: 5px;
     left: 445px;
-    z-index: -1;  
+    z-index: 1;  
     min-height: 19%;
     min-width: 25%;
     width: 29%;
@@ -140,6 +134,7 @@
     left: 50%;
     margin-top: -30px;
     margin-left: -100px;
+    z-index: 1;
 }
 
 .show_cloud_title_text {
@@ -156,6 +151,7 @@
     left: 52%;
     margin-top: -30px;
     margin-left: -100px;
+    z-index: 1;
 }
 
 
