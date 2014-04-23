@@ -1,27 +1,28 @@
-google.load('visualization', '1', {'packages': ['geochart']});
-google.setOnLoadCallback(drawWorldMarkersMap);
+$(function() {
+  google.load('visualization', '1', {'packages': ['geochart']});
+  google.setOnLoadCallback(drawWorldMarkersMap);
 
-function drawWorldMarkersMap() {
-var happiness_logs = gon.happiness_logs;
-var data = google.visualization.arrayToDataTable([['Location']]);
-data.addColumn('number', 'Happy Scale');
+  function drawWorldMarkersMap() {
+  var happiness_logs = gon.happiness_logs;
+  var data = google.visualization.arrayToDataTable([['Location']]);
+  data.addColumn('number', 'Happy Scale');
 
-happiness_logs.forEach( function (arrayItem) {
-   data.addRows([
-     [arrayItem['address'], arrayItem['happy_scale']]
-   ]);
+  happiness_logs.forEach( function (arrayItem) {
+     data.addRows([
+       [arrayItem['address'], arrayItem['happy_scale']]
+     ]);
+  });
+
+  var options = {
+    region: gon.region,
+    displayMode: 'markers',
+    colorAxis: {colors: ['blue', 'red']}
+  };
+
+  var chart = new google.visualization.GeoChart(document.getElementById('world_map_div'));
+  chart.draw(data, options);
+  };
 });
-
-var options = {
-  region: gon.region,
-  displayMode: 'markers',
-  colorAxis: {colors: ['blue', 'red']}
-};
-
-var chart = new google.visualization.GeoChart(document.getElementById('world_map_div'));
-chart.draw(data, options);
-};
-
 
 google.load('visualization', '1', {'packages':['annotatedtimeline']});
 google.setOnLoadCallback(drawWorldChart);
