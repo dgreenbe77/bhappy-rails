@@ -1,4 +1,4 @@
-/*.chart1 {
+.chart1 {
     position: absolute;
     top: 190px;
     left: 150px;
@@ -7,7 +7,7 @@
     min-width: 70%;
     width: 70%;
     height: 70%;
-}*/
+}
 
 .chart1_buttons {
     position: absolute;
@@ -275,13 +275,3 @@
     width: 180px;
 }
 
-.chart1 {
-    position: absolute;
-    top: 190px;
-    left: 150px;
-    z-index: 12;
-    min-height: 70%;
-    min-width: 70%;
-    width: 70%;
-    height: 70%;
-}
