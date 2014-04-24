@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
       @location.delete
     end
 
-    if params["commit"] == "Change Region"
+    if params["commit"] == "Change Region" || params["commit"] == "Show World"
       if @location.save
         redirect_to @happiness_log
       else
@@ -20,9 +20,9 @@ class LocationsController < ApplicationController
       end
     else
       if @location.save
-        redirect_to '/'
+        redirect_to '/world'
       else
-        redirect_to '/'
+        redirect_to '/world'
       end
     end
   end

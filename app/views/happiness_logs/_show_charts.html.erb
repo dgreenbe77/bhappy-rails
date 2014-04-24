@@ -11,12 +11,12 @@
 <div class="show_chart2_buttons">
   <%= simple_form_for(@location) do |r| %>
     <%= r.select(:region, IsoCountryCodes.for_select) %>
-    <%= r.submit "Change Location" %>
+    <%= r.submit "Change Region" %>
   <% end %>
 
   <%= simple_form_for(@location) do |r| %>
     <%= r.hidden_field :region, value: "world" %>
-    <%= r.submit "See World" %>
+    <%= r.submit "Show World" %>
   <% end %>
 </div>
 
