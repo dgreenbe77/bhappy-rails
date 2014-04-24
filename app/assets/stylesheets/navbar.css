@@ -62,14 +62,6 @@
     top: 54px;
 }
 
-.logs {
-    float: right;
-    top: 535px;
-    position: relative;
-    z-index: 10;
-    margin-right: 37px;
-}
-
 .cloud_search {
     position: absolute;
     top: 5px;

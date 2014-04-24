@@ -7,8 +7,6 @@ class HappinessLogsController < ApplicationController
   def index
     if user_signed_in?
       @happiness_logs = @user.happiness_logs.order(created_at: :desc).page params[:page]
-    else
-      @happiness_logs = []
     end
   end
 

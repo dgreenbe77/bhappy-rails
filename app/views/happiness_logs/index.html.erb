@@ -3,8 +3,10 @@
 <img src="/images/logs2.png" class="fg_left">
 
 <div class="logs_container">
-  <%= render partial: 'happiness_logs/happiness_log', collection: @happiness_logs %>
-  <%= paginate @happiness_logs %>
+  <% unless @happiness_logs.blank? %>
+    <%= render partial: 'happiness_logs/happiness_log', collection: @happiness_logs %>
+    <%= paginate @happiness_logs %>
+  <% end %>
 </div>
 
 <%= link_to image_tag('world.png'), world_index_path, class: 'world'%>
