@@ -4,7 +4,7 @@ Bhappy::Application.routes.draw do
 
   resources :happiness_logs, path: 'happy' do
     get 'search', on: :collection
-    get 'logs', on: :collection
+    # get 'logs', on: :collection
   end
 
   resources :locations, only: [:create]

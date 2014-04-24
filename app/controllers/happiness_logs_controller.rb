@@ -5,6 +5,11 @@ class HappinessLogsController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
+    if user_signed_in?
+      @happiness_logs = @user.happiness_logs.order(created_at: :desc).page params[:page]
+    else
+      @happiness_logs = []
+    end
   end
 
   def show
@@ -16,14 +21,6 @@ class HappinessLogsController < ApplicationController
 
     unless @user.location.blank?
       gon.region = @user.location.region
-    end
-  end
-
-  def logs
-    if user_signed_in?
-      @happiness_logs = @user.happiness_logs.order(created_at: :desc).page params[:page]
-    else
-      @happiness_logs = []
     end
   end
 

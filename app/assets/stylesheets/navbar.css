@@ -21,7 +21,6 @@
   z-index: 10;
 }
 
-
 .logo_bird {
     position: absolute;
     left: 10px;
@@ -187,7 +186,7 @@
 }
 
 .world {
-    top: 75%;
     position: fixed;
+    top: 75%;
     left: 1%;
 }

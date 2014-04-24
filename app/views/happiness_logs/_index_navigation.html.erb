@@ -21,19 +21,19 @@
 <div class="row">
   <div class="large-12 medium-12 small-12 columns">
     <div id="smiley">
-      <h1 class="eye1">.</h1>
-      <h1 class="eye2">.</h1>
-      <h1 class="mouth">)</h1>
-      <span class="circle"></span>
+      <h1 data-stellar-ratio="1.2" class="eye1">.</h1>
+      <h1 data-stellar-ratio="1.2" class="eye2">.</h1>
+      <h1 data-stellar-ratio="1.2" class="mouth">)</h1>
+      <span data-stellar-ratio="1.2" class="circle"></span>
     </div>
 
     <div title="logo in cloud">
-      <img class="logo_cloud" src="/images/cloud1.png">
-      <h1 class="whole_logo"><a href="/"><img src="/images/smiley.png" class="logo">BHappy</a></h1>
+      <img data-stellar-ratio="1.4" class="logo_cloud" src="/images/cloud1.png">
+      <h1 data-stellar-ratio="1.4" class="whole_logo"><a href="/"><img src="/images/smiley.png" class="logo">BHappy</a></h1>
     </div>
 
-    <img src="/images/cloud1.png" class="cloud_login_right">
-    <div class="login_logout_right">
+    <img src="/images/cloud1.png" data-stellar-ratio="1.1" class="cloud_login_right">
+    <div data-stellar-ratio="1.1" class="login_logout_right">
       <% if user_signed_in? %>
         <span class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></span>
       <% else %>
@@ -41,10 +41,6 @@
       <%end%>
     </div>
   </div>
-</div>
-
-<div class="logs">
-  <%= link_to image_tag('/images/logs.png'), logs_happiness_logs_path %>
 </div>
 
 <div class="search2">
