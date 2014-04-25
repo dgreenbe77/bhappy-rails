@@ -11,8 +11,8 @@ So I can find the ones I'm looking for
 
   before(:each) do
     @user = FactoryGirl.create(:user)
+    @happiness_log = FactoryGirl.create(:happiness_log, user: @user)
     sign_in_as(@user)
-    @happiness_log = FactoryGirl.create(:happiness_log)
   end
 
   context 'entering in search query' do

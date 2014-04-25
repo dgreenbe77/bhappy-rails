@@ -15,7 +15,7 @@ So I can fix any mistakes I made
     sign_in_as(@user)
     @happiness_log = FactoryGirl.create(:happiness_log, user: @user)
     FactoryGirl.create(:question)
-    visit '/happy/logs'
+    visit '/happy'
   end
 
   context "editing a page that has been posted" do
@@ -23,7 +23,7 @@ So I can fix any mistakes I made
     it 'enables you to edit a post' do 
       click_on 'Destroy'
       expect(current_path).to eq '/happy'
-      visit '/happy/logs'
+      visit '/happy'
       expect(page).to_not have_content(@happiness_log.main_post)
     end
 

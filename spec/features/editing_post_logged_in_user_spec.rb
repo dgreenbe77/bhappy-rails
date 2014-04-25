@@ -15,7 +15,7 @@ So I can fix any mistakes I made
     sign_in_as(@user)
     @happiness_log = FactoryGirl.create(:happiness_log, user: @user)
     FactoryGirl.create(:question)
-    visit '/happy/logs'
+    visit '/happy'
     click_on 'Edit'
   end
 
