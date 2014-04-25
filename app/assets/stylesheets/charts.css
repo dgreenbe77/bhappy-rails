@@ -255,21 +255,3 @@
     margin-left: -100px;     
 }
 
-.demographics {
-    top: 132%;
-    position: fixed;
-    left: 5%;
-    width: 100px;
-    min-width: 100px;
-    z-index: 20;
-}
-
-.demographics_cloud {
-    top: 125%;
-    position: fixed;
-    left: 1%;
-    z-index: 19;
-    height: 235px;
-    width: 180px;
-}
-

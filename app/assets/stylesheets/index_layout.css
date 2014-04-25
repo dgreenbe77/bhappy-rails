@@ -14,6 +14,27 @@
       margin-left: -100px;
 }
 
+.demographics {
+    top: 760px;
+    position: absolute;
+    font-size: 11.5px;
+    right: 4.5%;
+    width: 100px;
+    min-width: 100px;
+    z-index: 3;
+}
+
+.demographics_cloud {
+    top: 670px;
+    position: absolute;
+    right: 1%;
+    z-index: 19;
+    height: 375px;
+    width: 170px;
+    opacity: .63;
+    z-index: 3;
+}
+
 .cloud1 {
     position: fixed;
     top: 260px;
