@@ -30,6 +30,12 @@ So I can find the ones I'm looking for
       expect(page).to have_content("10 lakeville drive, boston, ma 02184")
     end
 
+    it 'search query is case insensitive' do
+      fill_in 'Query', with: "Hi"
+      click_on 'Search'
+      expect(page).to have_content("hi a+ happy!")
+    end
+
   end
 
 end
