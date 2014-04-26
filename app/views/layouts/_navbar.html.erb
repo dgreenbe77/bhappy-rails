@@ -21,7 +21,7 @@
       <%= form_tag(search_happiness_logs_path, method: :get, class: 'large-3 small-3 columns') do %>
         <div class="row collapse">
           <div class="large-8 small-8 columns">
-             <%= text_field_tag 'Query', nil, class: '' %>
+             <%= text_field_tag 'Query', nil %>
           </div>
           <div class="large-4 small-4 columns">
             <%= submit_tag 'Search', class: 'alert button small round expand' %>

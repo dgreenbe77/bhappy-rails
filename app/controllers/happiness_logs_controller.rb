@@ -24,7 +24,7 @@ class HappinessLogsController < ApplicationController
 
   def search
     query = "%#{params[:Query]}%"
-    @happiness_logs = @user.happiness_logs.where('main_post like :match or address like :match or title like :match', match: query)
+    @happiness_logs = @user.happiness_logs.where('main_post ilike :match or address ilike :match or title ilike :match', match: query)
   end
 
   def new
