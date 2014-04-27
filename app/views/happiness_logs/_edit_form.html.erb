@@ -45,3 +45,21 @@
   <%= link_to 'Show', @happiness_log %> |
   <%= link_to 'Back', happiness_logs_path %>
 </div>
+
+<script type="text/javascript">
+  var speed = 1750;
+
+  $('div, img, a, span, form').hide();
+  $(function() {
+      $('div, img, a, span, form').fadeIn(speed, function() {
+          $('a[href], button[href]').click(function(event) {
+              var url = $(this).attr('href');
+              if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
+              event.preventDefault();
+              $('html, body').fadeTo(speed, 0.85, function() {
+                  window.location = url;
+              });
+          });
+      });
+  });
+</script>

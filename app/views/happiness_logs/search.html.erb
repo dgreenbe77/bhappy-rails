@@ -20,10 +20,28 @@
         <p>Title: <br> <%= happiness_log.title %></p>
         <p>Post: <br> <%= happiness_log.main_post %></p>
         <p>Address: <br> <%= happiness_log.address %></p>
-        <span><%= link_to "happiness_log", happiness_log_path(happiness_log) %></span> |     
+        <span><%= link_to "Show", happiness_log_path(happiness_log) %></span> |     
         <span><%= link_to "Edit", edit_happiness_log_path(happiness_log) %></span> | 
         <span><%= link_to "Delete", happiness_log_path(happiness_log), method: :delete %></span>
     <% end %>
 
   <% end %>
 </div>
+
+<script type="text/javascript">
+  var speed = 1550;
+
+  $('div, img, a, span, form').hide();
+  $(function() {
+      $('div, img, a, span, form').fadeIn(speed, function() {
+          $('a[href], button[href]').click(function(event) {
+              var url = $(this).attr('href');
+              if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
+              event.preventDefault();
+              $('html, body').fadeTo(speed, 0.85, function() {
+                  window.location = url;
+              });
+          });
+      });
+  });
+</script>
