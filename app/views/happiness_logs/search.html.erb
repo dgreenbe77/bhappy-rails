@@ -7,26 +7,7 @@
 
 <br>
 
-<div class="scroll_container">
-  <% if @happiness_logs.empty? %>
-
-    <p>No results found.</p>
-
-  <% else %>
-
-    <p><%= "#{@happiness_logs.count} result(s) found." %></p>
-
-    <% @happiness_logs.each do |happiness_log| %>
-        <p>Title: <br> <%= happiness_log.title %></p>
-        <p>Post: <br> <%= happiness_log.main_post %></p>
-        <p>Address: <br> <%= happiness_log.address %></p>
-        <span><%= link_to "Show", happiness_log_path(happiness_log) %></span> |     
-        <span><%= link_to "Edit", edit_happiness_log_path(happiness_log) %></span> | 
-        <span><%= link_to "Delete", happiness_log_path(happiness_log), method: :delete %></span>
-    <% end %>
-
-  <% end %>
-</div>
+<%= render 'happiness_logs/search_log' %>
 
 <script type="text/javascript">
   var speed = 1550;

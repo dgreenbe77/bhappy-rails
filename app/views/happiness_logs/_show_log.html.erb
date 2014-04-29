@@ -1,0 +1,24 @@
+<div class="scroll_container2">
+  <% unless @happiness_log.image == "Add Image" || @happiness_log.image.blank? %>
+    <%= filepicker_image_tag @happiness_log.image, w: 400, h: 400, fit: 'clip', class: 'center' %>
+    <%= filepicker_save_button "Save", @happiness_log.image, "image/jpg" %>
+  <% end %>
+
+  <p>
+    <strong>Main Post:</strong>
+    <%= @happiness_log.main_post %>
+  </p>
+
+  <p>
+    <strong>Happiness Scale:</strong>
+    <%= @happiness_log.happy_scale %>
+  </p>
+
+  <p>
+    <strong>Image Scale:</strong>
+    <%= @happiness_log.smile_scale %>
+  </p>
+
+  <%= link_to 'Edit', edit_happiness_log_path(@happiness_log) %> |
+  <%= link_to 'Back', happiness_logs_path %>
+</div>
